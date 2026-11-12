@@ -78,6 +78,25 @@ if __name__ == "__main__":
 
     curve = rc.curve_table(scored)
     curve.to_csv(os.path.join(RES, "rain_reach_curve.csv"), index=False)
+
+    # Labelled sensitivity (reading choice 15): seasons whose opening-hours rain total is 0.00 in are treated as
+    # unusable (silent gauge); stations are re-kept at >= 20 seasons; pairs rebuilt and rescored.
+    sc = pd.read_csv(os.path.join(PROC, "rain_season_counts.csv"), dtype={"station": str})
+    zero = sc[sc["season_usable"] & (sc["open_hours_rain_in"].fillna(0) <= 0)]
+    m2 = rp.build_day_matrix(daily, FIRST, LAST)
+    for r in zero.itertuples():
+        if r.station in m2.ids:
+            m2.season_ok[m2.row(r.station), int(r.season) - FIRST] = False
+    st2 = st.copy()
+    st2["n_usable_nozero"] = st2["n_usable"].fillna(0) - st2["n_usable_zero_rain"].fillna(0)
+    st2["kept"] = (st2["kept"] == True) & (st2["n_usable_nozero"] >= 20)  # noqa: E712
+    pairs2 = rp.build_pairs(st2)
+    allp2 = rp.evaluate_all(pairs2, m2)
+    scored2 = allp2[allp2["status"] == "ok"].reset_index(drop=True)
+    scored2.to_csv(os.path.join(PROC, "rain_pairs_sens_nozero.csv"), index=False)
+    curve2 = rc.curve_table(scored2)
+    curve2.to_csv(os.path.join(RES, "rain_reach_curve_sens_nozero.csv"), index=False)
+    log(f"no-zero-rain sensitivity: {int(st2['kept'].sum())} stations, {len(scored2)} pairs scored")
     sens = allp[allp["status"].isin(["ok", "few_joint_seasons"])].reset_index(drop=True)
     curve_s = rc.curve_table(sens)
     curve_s.to_csv(os.path.join(RES, "rain_reach_curve_sensitivity.csv"), index=False)
@@ -99,6 +118,10 @@ if __name__ == "__main__":
         "reach_pair_boot": rc.reach_km(curve, "he_lo_pair"), "reach_gauge_boot": rc.reach_km(curve, "he_lo_gauge"),
         "reach_sensitivity_pair_boot": rc.reach_km(curve_s, "he_lo_pair"),
         "reach_sensitivity_gauge_boot": rc.reach_km(curve_s, "he_lo_gauge"),
+        "reach_nozero_pair_boot": rc.reach_km(curve2, "he_lo_pair"),
+        "reach_nozero_gauge_boot": rc.reach_km(curve2, "he_lo_gauge"),
+        "nozero_n_stations": int(st2["kept"].sum()), "nozero_n_pairs_scored": int(len(scored2)),
+        "nozero_stations_dropped": sorted(set(kept["sid"]) - set(st2.loc[st2["kept"], "sid"])),
         "trenton_pne": (tp_all.iloc[0].to_dict() if len(tp_all) else None),
         "trenton_pne_scored": bool(len(tp)),
         "same_station": {"n": int(scored["same_station"].sum()),

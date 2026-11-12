@@ -75,3 +75,10 @@ Where the pre-registration leaves a rule open, the literal reading is used. Code
   Figure opened: the Trenton-PNE label sat on the curve; moved below the point. No rule changed.
 - 2026-11-12 23:15 The container restarted; the background pull died after 46 IEM stations (the last request, ART,
   got an empty reply). Pull restarted with the same script (cached files are skipped).
+- 2026-11-12 23:47 IEM pull complete: 109 stations (all 121 candidates minus the 12 Phase 0 stations), 0 failures,
+  requests logged in data/raw/rain/reach/iem_asos/requests.log. NCEI pull running (pre-1990 archive stations).
+15. (added 2026-11-12 23:54, after the station table of the full IEM pull was read but before any pair was
+    scored on it) UNV has 20 usable seasons of which 15 report 0.00 in over the whole season (silent gauge);
+    ELM 1 of 30, ITH 2 of 20. The main rule is unchanged (literal SPEC). Labelled sensitivity added: zero-rain
+    seasons are treated as unusable, stations re-kept at >= 20 seasons, pairs rebuilt and rescored
+    (rain_pairs_sens_nozero.csv, rain_reach_curve_sens_nozero.csv).

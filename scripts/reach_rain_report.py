@@ -112,6 +112,11 @@ def summary(curve, curve_s, reg, numbers, pairs, excluded, stations, table):
         r = numbers[key]
         L.append(f"- Sensitivity, pairs with fewer than 20 joint seasons included ({name} resampled): "
                  f"reach {r['reach_km']:.0f} km, contiguous {r['contiguous_reach_km']:.0f} km.")
+    for key, name in (("reach_nozero_pair_boot", "pairs"), ("reach_nozero_gauge_boot", "gauges")):
+        r = numbers[key]
+        L.append(f"- Sensitivity, zero-rain seasons treated as unusable ({numbers['nozero_n_stations']} stations, "
+                 f"{numbers['nozero_n_pairs_scored']} pairs; dropped {numbers['nozero_stations_dropped']}; "
+                 f"{name} resampled): reach {r['reach_km']:.0f} km, contiguous {r['contiguous_reach_km']:.0f} km.")
     L.append("")
     L.append("| bin km | pairs | gauges | mean HE | 95% band (pairs) | 95% band (gauges) | mean r | mean daily agreement |")
     L.append("|---|---|---|---|---|---|---|---|")
