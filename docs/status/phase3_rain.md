@@ -52,6 +52,10 @@ Where the pre-registration leaves a rule open, the literal reading is used. Code
 12. Station-level table: per exposure gauge G, the settlement station with the highest REPORT HE (ties to the
     nearer one) and the nearest climate-report station (G itself when it has one).
 13. Trenton-PNE: the (TTN, PNE) pair of this analysis (its own windows), plotted and labelled.
+14. (added 2026-11-12 23:12, before the full build) A gauge that reports 0.00 every hour passes the 90% rule
+    (Phase 0: a failure without PNO cannot be caught). The SPEC rule is kept as the main rule; the station table
+    gets n_usable_zero_rain (usable seasons whose opening-hours rain total is 0.00 in) and such stations are
+    listed in the summary. Seen in the smoke test: SWF, 12 usable seasons, 0 loss days (not kept anyway).
 
 ## Progress log (UTC)
 - 2026-11-12 22:55 Read PHASE3_PREREG, SPEC_v3, phase1_rain.md, phase2_eval.md, phase3_temp.md (temperature
@@ -69,10 +73,5 @@ Where the pre-registration leaves a rule open, the literal reading is used. Code
   stations, then reach_rain_pairs.py and reach_rain_report.py, to check that the pipeline runs end to end
   (30 kept stations, 222 pairs). Numbers not read as results; everything is rerun when the pull is complete.
   Figure opened: the Trenton-PNE label sat on the curve; moved below the point. No rule changed.
-14. (added 2026-11-12 23:12, before the full build) A gauge that reports 0.00 every hour passes the 90% rule
-    (Phase 0: a failure without PNO cannot be caught). The SPEC rule is kept as the main rule; the station table
-    gets n_usable_zero_rain (usable seasons whose opening-hours rain total is 0.00 in) and such stations are
-    listed in the summary. Seen in the smoke test: SWF, 12 usable seasons, 0 loss days (not kept anyway).
 - 2026-11-12 23:15 The container restarted; the background pull died after 46 IEM stations (the last request, ART,
-  got an empty reply). Pull restarted with the same script (cached files are skipped). Reading choice 14 above
-  belongs to the numbered list; it was written before the full build.
+  got an empty reply). Pull restarted with the same script (cached files are skipped).
