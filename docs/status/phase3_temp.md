@@ -46,3 +46,15 @@ Where the pre-registration leaves a rule open, the literal reading is used.
 - 2026-11-12 21:37 Read PHASE3_PREREG, phase2_eval.md, qasim.md, SPEC_v2, src/hedge_eval, src/panel/hedge.py.
   Panel: 84 exposure stations, 40 with CLI, 11 seasons 2015-2025, 153 days each. 992 pairs within 200 km
   including the 40 same-station pairs (counted from coordinates only, before any TMAX was read).
+- 2026-11-12 22:05 src/reach_temp/{contract,curve,regress}.py and scripts/reach_temp_run.py written. 24 tests in
+  tests/test_reach_temp_{pairs,curve}.py pass (pair sets, 60/40 split, hand HE, leak test, gauge bootstrap keeps
+  whole gauges, planted regression slope). No real pair result looked at yet.
+- 2026-11-12 22:12 scripts/reach_temp_run.py run (8 s). 992 pairs: 951 with HE, 41 with HE undefined (no REPORT
+  season above the TRAIN reference), 0 failing the usable rule (every pair has 11 usable seasons, TRAIN 2015-2020,
+  REPORT 2021-2025). REGISTERED RESULT: no 10 km bin, including the same-station bin, has a lower band edge above
+  0 under either bootstrap. Same-station bin mean HE -0.92, pair band [-2.62, 0.34], gauge band [-2.44, 0.31].
+  d = 8 (the grid maximum) is chosen for 733 of 992 pairs: stations with 20-40 hot days a season cannot get a
+  deductible near their mean count, so the contract pays nearly every season and the 20% loading on a premium of
+  20-40 loss-days alone drives net cost above the reference. Decided at this point (not registered, labelled):
+  one sensitivity with the d grid widened to {0..40}, and a median curve beside the registered mean curve.
+  The registered mean curve and reach stay the headline. No other rule changed.

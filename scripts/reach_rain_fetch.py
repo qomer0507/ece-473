@@ -8,7 +8,8 @@ Cache (never re-fetched when present): data/raw/rain/reach/iem_asos/<SID>_B.csv.
 data/raw/rain/reach/ncei_global_hourly/<SID>_<y0>_<y1>.csv.gz. Every request is appended to requests.log.
 The 12 Phase 0 stations already have reduced hourly files in data/processed/rain_probe/ and are skipped.
 Stations are pulled in order of archive_begin (long records first). The NCEI pull is skipped for stations whose
-IEM archive begins in 1990 or later (nothing pre-ASOS to find) or that have no USAF/WBAN id.
+IEM archive begins in 1990 or later (nothing pre-ASOS to find) or that have no USAF/WBAN id, and 10-year blocks
+outside the station's isd-history BEGIN..END years are not requested.
 """
 import gzip
 import os
@@ -57,11 +58,17 @@ def fetch_iem(sid: str) -> None:
     print(f"FAILED IEM {sid}", flush=True)
 
 
-def fetch_ncei(sid: str, ids: str) -> None:
+def isd_years(ids: str, hist: pd.DataFrame) -> tuple[int, int]:
+    """(first, last) year covered by isd-history for these USAF+WBAN ids; blocks outside are not requested."""
+    h = hist[(hist["USAF"] + hist["WBAN"]).isin(ids.split(","))]
+    return int(h["BEGIN"].str[:4].min()), int(h["END"].str[:4].max())
+
+
+def fetch_ncei(sid: str, ids: str, years: tuple[int, int] = (1941, 2005)) -> None:
     for y0 in range(1941, 2006, 10):
         y1 = min(y0 + 9, 2005)
         dst = os.path.join(RAW, "ncei_global_hourly", f"{sid}_{y0}_{y1}.csv.gz")
-        if os.path.exists(dst):
+        if os.path.exists(dst) or y1 < years[0] or y0 > years[1]:
             continue
         url = (f"{NCEI}?dataset=global-hourly&stations={ids}&dataTypes=AA1,AA2,AA3,AA4"
                f"&startDate={y0}-01-01&endDate={y1}-12-31&format=csv")
@@ -85,6 +92,8 @@ if __name__ == "__main__":
     st = st[~st["sid"].isin(PHASE0)].sort_values(["archive_begin", "sid"])
     os.makedirs(os.path.join(RAW, "iem_asos"), exist_ok=True)
     os.makedirs(os.path.join(RAW, "ncei_global_hourly"), exist_ok=True)
+    hist = pd.read_csv(os.path.join(ROOT, "data", "raw", "rain", "ncei_global_hourly_probe", "isd-history.csv"),
+                       dtype=str)
     for _, r in st.iterrows():
         if kind == "iem":
             fetch_iem(r["sid"])
@@ -92,5 +101,5 @@ if __name__ == "__main__":
         elif kind == "ncei":
             if r["archive_begin"] >= "1990" or not isinstance(r["isd_ids"], str) or not r["isd_ids"]:
                 continue
-            fetch_ncei(r["sid"], r["isd_ids"])
+            fetch_ncei(r["sid"], r["isd_ids"], isd_years(r["isd_ids"], hist))
     print("done", kind, flush=True)
