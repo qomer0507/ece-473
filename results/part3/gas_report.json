@@ -1,0 +1,110 @@
+{
+ "note": "Gas measured in the local Hardhat EVM by `npm test` in contracts/. Not measured on Sepolia.",
+ "evm": "hardhat network, hardfork cancun",
+ "compiler": "0.8.26+commit.8a97fa7a.Emscripten.clang",
+ "optimizer": {
+  "enabled": true,
+  "runs": 200
+ },
+ "brackets": 12,
+ "deployedBytes": {
+  "BracketLMSR": 13901,
+  "TemperatureOracle": 1918,
+  "MockOracle": 1466,
+  "MathHarness": 3806,
+  "ReentrantTrader": 1224,
+  "RejectingTrader": 436
+ },
+ "gas": {
+  "deploy BracketLMSR (n=12)": {
+   "calls": 1,
+   "min": 3492795,
+   "median": 3492795,
+   "max": 3492795
+  },
+  "buy (single bracket)": {
+   "calls": 26,
+   "min": 147941,
+   "median": 148687,
+   "max": 216453
+  },
+  "buyBasket (6 brackets >= 90)": {
+   "calls": 2,
+   "min": 422884,
+   "median": 429980,
+   "max": 429980
+  },
+  "deploy BracketLMSR (n=12, seeded prior)": {
+   "calls": 1,
+   "min": 3942385,
+   "median": 3942385,
+   "max": 3942385
+  },
+  "deploy TemperatureOracle": {
+   "calls": 6,
+   "min": 514812,
+   "median": 514812,
+   "max": 514812
+  },
+  "oracle.setReporter": {
+   "calls": 1,
+   "min": 47785,
+   "median": 47785,
+   "max": 47785
+  },
+  "oracle.reportTemperature": {
+   "calls": 2,
+   "min": 50661,
+   "median": 50661,
+   "max": 50661
+  },
+  "settle": {
+   "calls": 1,
+   "min": 139446,
+   "median": 139446,
+   "max": 139446
+  },
+  "redeem": {
+   "calls": 1,
+   "min": 42398,
+   "median": 42398,
+   "max": 42398
+  },
+  "sponsorWithdraw": {
+   "calls": 1,
+   "min": 36444,
+   "median": 36444,
+   "max": 36444
+  },
+  "cancelAfterDeadline": {
+   "calls": 1,
+   "min": 81495,
+   "median": 81495,
+   "max": 81495
+  },
+  "claimRefund": {
+   "calls": 1,
+   "min": 39768,
+   "median": 39768,
+   "max": 39768
+  },
+  "emergencyCancel": {
+   "calls": 1,
+   "min": 72742,
+   "median": 72742,
+   "max": 72742
+  },
+  "buyBasket (repeat buyer)": {
+   "calls": 2,
+   "min": 190580,
+   "median": 190998,
+   "max": 190998
+  },
+  "buy (repeat buyer)": {
+   "calls": 2,
+   "min": 147693,
+   "median": 148627,
+   "max": 148627
+  }
+ }
+}

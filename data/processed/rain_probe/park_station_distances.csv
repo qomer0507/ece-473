@@ -1,0 +1,68 @@
+park_id,asos_id,station_name,network,st_lat,st_lon,ghcn_id,iem_archive_begin,iem_archive_end,is_awos,distance_km,in_stations_csv,has_cli,cli_id,station_of_interest,rank_for_park
+dorney_park,JVU,Allentown,PA_ASOS,40.5703,-75.4883,,2008-10-06,2011-07-19,False,3.7,False,not in stations.csv,,False,1
+dorney_park,XLL,Allentown,PA_ASOS,40.5703,-75.4883,USW00000379,2008-08-25,,True,3.7,False,not in stations.csv,,False,2
+dorney_park,ABE,ALLENTOWN-BETHLEHEM,PA_ASOS,40.6508,-75.4492,USW00014737,1929-12-31,,False,10.7,True,True,KABE,True,3
+dorney_park,UKT,QUAKERTOWN_ARPT,PA_ASOS,40.4352,-75.3819,USW00064753,2003-06-09,,True,20.3,False,not in stations.csv,,False,4
+dorney_park,CKZ,Perkasie,PA_ASOS,40.3892,-75.2905,USI0000KCKZ,2015-08-24,,True,29.3,False,not in stations.csv,,False,5
+dorney_park,22N,Lehighton,PA_ASOS,40.8095,-75.7615,USI0000K22N,2015-10-20,,True,32.2,False,not in stations.csv,,False,6
+dorney_park,PTW,POTTSTOWN LIMERICK AIRPORT,PA_ASOS,40.2383,-75.5572,USW00054782,1999-03-31,,False,37.8,True,False,,False,7
+dorney_park,RDG,READING/SPAATZ FLD,PA_ASOS,40.3785,-75.9652,USW00014712,1943-06-08,,False,42.9,True,True,KRDG,False,8
+dorney_park,DYL,DOYLESTOWN AIRPORT,PA_ASOS,40.333,-75.1223,USW00054786,1999-07-31,,False,44.1,True,False,,True,9
+dorney_park,TTN,TRENTON/MERCER CO.,NJ_ASOS,40.2768,-74.8159,USW00014792,1930-06-07,,False,69.2,True,True,KTTN,True,10
+dorney_park,PNE,PHILADELPHIA NE,PA_ASOS,40.0789,-75.0134,USW00094732,1948-12-31,,False,70.8,True,False,,True,11
+dorney_park,PHL,Philadelphia Intl,PA_ASOS,39.8734,-75.2266,USW00013739,1940-01-25,,False,82.5,True,True,KPHL,True,12
+dorney_park,WRI,MCGUIRE AFB,NJ_ASOS,40.0156,-74.5917,USW00014706,1942-07-31,,False,101.3,True,False,,True,13
+dorney_park,EWR,Newark Intl,NJ_ASOS,40.6827,-74.1693,USW00014734,1930-12-31,,False,115.5,True,True,KEWR,True,14
+dorney_park,NEL,LAKEHURST NAS,NJ_ASOS,40.0334,-74.3536,USW00014780,1945-02-01,,False,116.8,True,False,,True,15
+dorney_park,BLM,BELMAR-FARMDALE,NJ_ASOS,40.18,-74.13,USW00054760,1954-12-31,,False,126.7,False,not in stations.csv,,True,16
+dorney_park,NYC,NEW YORK CITY,NY_ASOS,40.779,-73.9692,USW00094728,1943-12-01,,False,133.6,True,True,KNYC,True,17
+dorney_park,LGA,New York/LaGuardia,NY_ASOS,40.7794,-73.8803,USW00014732,1935-02-22,,False,141.0,True,True,KLGA,True,18
+dorney_park,JFK,NEW YORK/JF KENNEDY,NY_ASOS,40.6386,-73.7622,USW00094789,1948-07-01,,False,149.5,True,True,KJFK,True,19
+great_adventure,NEL,LAKEHURST NAS,NJ_ASOS,40.0334,-74.3536,USW00014780,1945-02-01,,False,13.7,True,False,,True,1
+great_adventure,WRI,MCGUIRE AFB,NJ_ASOS,40.0156,-74.5917,USW00014706,1942-07-31,,False,18.7,True,False,,True,2
+great_adventure,MJX,Toms River,NJ_ASOS,39.9275,-74.2924,USW00000462,2007-09-27,,False,26.5,False,not in stations.csv,,False,3
+great_adventure,BLM,BELMAR-FARMDALE,NJ_ASOS,40.18,-74.13,USW00054760,1954-12-31,,False,26.8,False,not in stations.csv,,True,4
+great_adventure,TTN,TRENTON/MERCER CO.,NJ_ASOS,40.2768,-74.8159,USW00014792,1930-06-07,,False,35.5,True,True,KTTN,True,5
+great_adventure,VAY,SOUTH JERSEY REGIONAL AIRPORT,NJ_ASOS,39.9429,-74.8457,USW00093780,1995-01-04,,False,40.8,True,False,,False,6
+great_adventure,PNE,PHILADELPHIA NE,PA_ASOS,40.0789,-75.0134,USW00094732,1948-12-31,,False,49.2,True,False,,True,7
+great_adventure,DYL,DOYLESTOWN AIRPORT,PA_ASOS,40.333,-75.1223,USW00054786,1999-07-31,,False,61.9,True,False,,True,8
+great_adventure,EWR,Newark Intl,NJ_ASOS,40.6827,-74.1693,USW00014734,1930-12-31,,False,64.8,True,True,KEWR,True,9
+great_adventure,PHL,Philadelphia Intl,PA_ASOS,39.8734,-75.2266,USW00013739,1940-01-25,,False,73.2,True,True,KPHL,True,10
+great_adventure,JFK,NEW YORK/JF KENNEDY,NY_ASOS,40.6386,-73.7622,USW00094789,1948-07-01,,False,80.0,True,True,KJFK,True,11
+great_adventure,NYC,NEW YORK CITY,NY_ASOS,40.779,-73.9692,USW00094728,1943-12-01,,False,81.7,True,True,KNYC,True,12
+great_adventure,LGA,New York/LaGuardia,NY_ASOS,40.7794,-73.8803,USW00014732,1935-02-22,,False,85.7,True,True,KLGA,True,13
+great_adventure,ABE,ALLENTOWN-BETHLEHEM,PA_ASOS,40.6508,-75.4492,USW00014737,1929-12-31,,False,102.8,True,True,KABE,True,14
+luna_park,JRB,Manhattan - Wall Street,NY_ASOS,40.7012,-74.009,USI0000KJRB,2016-07-20,,False,14.4,False,not in stations.csv,,False,1
+luna_park,JFK,NEW YORK/JF KENNEDY,NY_ASOS,40.6386,-73.7622,USW00094789,1948-07-01,,False,19.6,True,True,KJFK,True,2
+luna_park,EWR,Newark Intl,NJ_ASOS,40.6827,-74.1693,USW00014734,1930-12-31,,False,20.1,True,True,KEWR,True,3
+luna_park,NYC,NEW YORK CITY,NY_ASOS,40.779,-73.9692,USW00094728,1943-12-01,,False,22.8,True,True,KNYC,True,4
+luna_park,LDJ,Linden,NJ_ASOS,40.6174,-74.2446,USW00000178,2008-03-24,,True,23.0,False,not in stations.csv,,False,5
+luna_park,LGA,New York/LaGuardia,NY_ASOS,40.7794,-73.8803,USW00014732,1935-02-22,,False,24.3,True,True,KLGA,True,6
+luna_park,TEB,TETERBORO AIRPORT,NJ_ASOS,40.859,-74.0562,USW00094741,1946-12-31,,False,32.4,True,False,,False,7
+luna_park,CDW,CALDWELL/ESSEX CO.,NJ_ASOS,40.8764,-74.2831,USW00054743,1981-08-05,,False,42.3,True,False,,False,8
+luna_park,MMU,MORRISTOWN MUNI,NJ_ASOS,40.7994,-74.4149,USW00054738,1981-01-12,,False,44.5,False,not in stations.csv,,False,9
+luna_park,BLM,BELMAR-FARMDALE,NJ_ASOS,40.18,-74.13,USW00054760,1954-12-31,,False,45.6,False,not in stations.csv,,True,10
+luna_park,NEL,LAKEHURST NAS,NJ_ASOS,40.0334,-74.3536,USW00014780,1945-02-01,,False,68.0,True,False,,True,11
+luna_park,TTN,TRENTON/MERCER CO.,NJ_ASOS,40.2768,-74.8159,USW00014792,1930-06-07,,False,78.2,True,True,KTTN,True,12
+luna_park,WRI,MCGUIRE AFB,NJ_ASOS,40.0156,-74.5917,USW00014706,1942-07-31,,False,81.0,True,False,,True,13
+luna_park,DYL,DOYLESTOWN AIRPORT,PA_ASOS,40.333,-75.1223,USW00054786,1999-07-31,,False,100.4,True,False,,True,14
+luna_park,PNE,PHILADELPHIA NE,PA_ASOS,40.0789,-75.0134,USW00094732,1948-12-31,,False,103.6,True,False,,True,15
+luna_park,ABE,ALLENTOWN-BETHLEHEM,PA_ASOS,40.6508,-75.4492,USW00014737,1929-12-31,,False,124.4,True,True,KABE,True,16
+luna_park,PHL,Philadelphia Intl,PA_ASOS,39.8734,-75.2266,USW00013739,1940-01-25,,False,131.5,True,True,KPHL,True,17
+sesame_place,TTN,TRENTON/MERCER CO.,NJ_ASOS,40.2768,-74.8159,USW00014792,1930-06-07,,False,11.3,True,True,KTTN,True,1
+sesame_place,PNE,PHILADELPHIA NE,PA_ASOS,40.0789,-75.0134,USW00094732,1948-12-31,,False,16.8,True,False,,True,2
+sesame_place,NXX,WILLOW GROVE NAS,PA_ASOS,40.2,-75.15,USW00014793,1945-02-01,2011-04-11,False,23.7,False,not in stations.csv,,False,3
+sesame_place,DYL,DOYLESTOWN AIRPORT,PA_ASOS,40.333,-75.1223,USW00054786,1999-07-31,,False,26.9,True,False,,True,4
+sesame_place,VAY,SOUTH JERSEY REGIONAL AIRPORT,NJ_ASOS,39.9429,-74.8457,USW00093780,1995-01-04,,False,27.0,True,False,,False,5
+sesame_place,WRI,MCGUIRE AFB,NJ_ASOS,40.0156,-74.5917,USW00014706,1942-07-31,,False,30.4,True,False,,True,6
+sesame_place,LOM,PHILADELPHIA/WINGS FIELD,PA_ASOS,40.1376,-75.2651,USW00064752,2003-01-24,,True,33.8,False,not in stations.csv,,False,7
+sesame_place,CKZ,Perkasie,PA_ASOS,40.3892,-75.2905,USI0000KCKZ,2015-08-24,,True,42.1,False,not in stations.csv,,False,8
+sesame_place,N40,Pittstown,NJ_ASOS,40.5765,-74.9877,,2025-12-13,,False,44.6,False,not in stations.csv,,False,9
+sesame_place,PHL,Philadelphia Intl,PA_ASOS,39.8734,-75.2266,USW00013739,1940-01-25,,False,46.0,True,True,KPHL,True,10
+sesame_place,NEL,LAKEHURST NAS,NJ_ASOS,40.0334,-74.3536,USW00014780,1945-02-01,,False,47.2,True,False,,True,11
+sesame_place,BLM,BELMAR-FARMDALE,NJ_ASOS,40.18,-74.13,USW00054760,1954-12-31,,False,63.0,False,not in stations.csv,,True,12
+sesame_place,ABE,ALLENTOWN-BETHLEHEM,PA_ASOS,40.6508,-75.4492,USW00014737,1929-12-31,,False,71.2,True,True,KABE,True,13
+sesame_place,EWR,Newark Intl,NJ_ASOS,40.6827,-74.1693,USW00014734,1930-12-31,,False,81.2,True,True,KEWR,True,14
+sesame_place,NYC,NEW YORK CITY,NY_ASOS,40.779,-73.9692,USW00094728,1943-12-01,,False,101.0,True,True,KNYC,True,15
+sesame_place,JFK,NEW YORK/JF KENNEDY,NY_ASOS,40.6386,-73.7622,USW00094789,1948-07-01,,False,106.6,True,True,KJFK,True,16
+sesame_place,LGA,New York/LaGuardia,NY_ASOS,40.7794,-73.8803,USW00014732,1935-02-22,,False,106.8,True,True,KLGA,True,17

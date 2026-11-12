@@ -1,0 +1,29 @@
+{
+  "run_utc": "2026-10-30T03:01:36Z",
+  "input": "synthetic_frame(seed=0) - made-up temperatures, NOT weather data",
+  "synthetic": true,
+  "station_payout_source": "src.local_residual._station_payout (fallback)",
+  "station_markup_ASSUMED": 0.2,
+  "notional": 800.0,
+  "thresholds_f": [
+    85.0,
+    90.0,
+    95.0
+  ],
+  "train_years": [
+    2015,
+    2021
+  ],
+  "test_years": [
+    2022,
+    2025
+  ],
+  "objective_params_ASSUMED": {
+    "mv_a": 1.0,
+    "cvar_gamma": 0.25,
+    "cvar_alpha": 0.95
+  },
+  "rows_in": 3366,
+  "rows_used": 3337,
+  "rows_missing_dropped": 29
+}

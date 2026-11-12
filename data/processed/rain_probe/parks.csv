@@ -1,0 +1,5 @@
+park_id,name,place,lat,lon,coord_source
+sesame_place,Sesame Place Philadelphia,"Langhorne (Middletown Twp), PA",40.185,-74.87194,https://en.wikipedia.org/wiki/Sesame_Place_Philadelphia
+great_adventure,Six Flags Great Adventure,"Jackson, NJ",40.1375,-74.44,https://en.wikipedia.org/wiki/Six_Flags_Great_Adventure
+dorney_park,Dorney Park & Wildwater Kingdom,"Dorneyville (Allentown), PA",40.5779417,-75.5315278,https://en.wikipedia.org/wiki/Dorney_Park_%26_Wildwater_Kingdom
+luna_park,Luna Park (Coney Island),"Brooklyn, NY",40.573972,-73.978479,"https://en.wikipedia.org/wiki/Luna_Park_(Coney_Island,_2010)"

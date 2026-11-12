@@ -1,0 +1,13 @@
+window,population,listed_set,n_locations,improve,unchanged,worsen,hedge_differs_from_baseline,adj_beats_no_hedge,base_beats_no_hedge,mean_no_hedge_R,median_R_change,mean_R_change
+SELECT,all_exposure,L_pre,84,61,10,13,75,52,42,0.12234,-0.03282,-0.06502
+SELECT,all_exposure,L_now,84,57,13,14,74,52,40,0.12234,-0.02081,-0.0618
+SELECT,excl_4_listed,L_pre,80,59,8,13,73,48,38,0.11797,-0.03388,-0.06735
+SELECT,excl_4_listed,L_now,80,57,9,14,74,48,36,0.11797,-0.02947,-0.06489
+SELECT,excl_4_listed_and_TEB,L_pre,79,58,8,13,72,47,37,0.11719,-0.03486,-0.06817
+SELECT,excl_4_listed_and_TEB,L_now,79,57,9,13,73,47,35,0.11719,-0.0305,-0.06636
+REPORT,all_exposure,L_pre,84,65,10,9,75,69,40,0.0946,-0.03087,-0.04703
+REPORT,all_exposure,L_now,84,60,12,12,74,67,36,0.0946,-0.02783,-0.04711
+REPORT,excl_4_listed,L_pre,80,63,8,9,73,65,36,0.09126,-0.03298,-0.04829
+REPORT,excl_4_listed,L_now,80,60,8,12,74,63,32,0.09126,-0.03081,-0.04946
+REPORT,excl_4_listed_and_TEB,L_pre,79,62,8,9,72,64,35,0.09003,-0.03111,-0.04846
+REPORT,excl_4_listed_and_TEB,L_now,79,59,8,12,73,62,31,0.09003,-0.03111,-0.04975

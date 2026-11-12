@@ -1,0 +1,30 @@
+{
+  "run_utc": "2026-10-30T03:07:45Z",
+  "input": "data/processed/aligned_daily.csv",
+  "synthetic": false,
+  "input_md5": "719ef1d10359f6ec02014fd5dde3e62a",
+  "station_payout_source": "src.station_hedge.station_payout",
+  "station_markup_ASSUMED": 0.2,
+  "notional": 800.0,
+  "thresholds_f": [
+    85.0,
+    90.0,
+    95.0
+  ],
+  "train_years": [
+    2015,
+    2021
+  ],
+  "test_years": [
+    2022,
+    2025
+  ],
+  "objective_params_ASSUMED": {
+    "mv_a": 1.0,
+    "cvar_gamma": 0.25,
+    "cvar_alpha": 0.95
+  },
+  "rows_in": 11781,
+  "rows_used": 11650,
+  "rows_missing_dropped": 131
+}

@@ -1,0 +1,14 @@
+city,reference,first_date,last_date,days_compared,matches,mismatches,match_share,mismatch_sizes_degF_ref_minus_kalshi,mismatches_by_year,days_by_year,flips_90F_trigger,flips_90F_undetermined
+NYC,GHCN-D TMAX (data/raw/region/tmax),2021-08-06,2025-12-31,1605,1604,1,0.99938,+1: 1,2025: 1,2021: 145; 2022: 365; 2023: 364; 2024: 366; 2025: 365,0,0
+NYC,"GHCN-D TMAX, 2023-2025 only",2023-01-01,2025-12-31,1095,1094,1,0.99909,+1: 1,2025: 1,2023: 364; 2024: 366; 2025: 365,0,0
+NYC,"NWS CLI high via IEM json/cli.py, all dates",2021-08-06,2026-11-10,1917,1917,0,1.0,,,2021: 145; 2022: 365; 2023: 364; 2024: 366; 2025: 363; 2026: 314,0,0
+NYC,"NWS CLI via IEM, NWS-settled era (to 2026-08-13)",2021-08-06,2026-08-13,1828,1828,0,1.0,,,2021: 145; 2022: 365; 2023: 364; 2024: 366; 2025: 363; 2026: 225,0,0
+NYC,"NWS CLI via IEM, Weather Company era (from 2026-08-14)",2026-08-14,2026-11-10,89,89,0,1.0,,,2026: 89,0,0
+Philadelphia,GHCN-D TMAX (data/raw/region/tmax),2024-11-20,2025-12-31,407,407,0,1.0,,,2024: 42; 2025: 365,0,0
+Philadelphia,"NWS CLI high via IEM json/cli.py, all dates",2024-11-20,2026-11-10,721,721,0,1.0,,,2024: 42; 2025: 365; 2026: 314,0,0
+Philadelphia,"NWS CLI via IEM, NWS-settled era (to 2026-08-13)",2024-11-20,2026-08-13,632,632,0,1.0,,,2024: 42; 2025: 365; 2026: 225,0,0
+Philadelphia,"NWS CLI via IEM, Weather Company era (from 2026-08-14)",2026-08-14,2026-11-10,89,89,0,1.0,,,2026: 89,0,0
+Newark,"NWS CLI high via IEM json/cli.py, all dates",2026-08-26,2026-11-10,77,77,0,1.0,,,2026: 77,0,0
+Newark,"NWS CLI via IEM, Weather Company era (from 2026-08-14)",2026-08-26,2026-11-10,77,77,0,1.0,,,2026: 77,0,0
+Trenton,"NWS CLI high via IEM json/cli.py, all dates",2026-08-26,2026-11-10,77,77,0,1.0,,,2026: 77,0,0
+Trenton,"NWS CLI via IEM, Weather Company era (from 2026-08-14)",2026-08-26,2026-11-10,77,77,0,1.0,,,2026: 77,0,0

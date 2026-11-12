@@ -1,0 +1,2 @@
+file,rows,md5,source,source_url,source_commit,source_md5,original_url_pattern,original_pulled_utc,extracted_utc
+data/raw/ghcnd_tmax_from_ceraunic_cache.csv,52235,a7a383c2975c39e9d76b923701ce3edd,derived cache from prior Ceraunic repo; original source NOAA NCEI GHCN-Daily by_station,https://github.com/ehfuzzz/ceraunic/blob/main/data/cache/eval04/ghcnd_tmax.parquet,f65163cb1016b6cc34b40e31b08d848a0b45a8f5,22139b0d581ca4eefc796fb86380a8ed,https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/{ID}.csv.gz,2026-09-30,2026-10-30T03:01:14Z

@@ -1,0 +1,5 @@
+year,n_days_in_cache,first,last,share_with_ask_24h,share_with_ask_24h_below_1,share_with_ask_12h,median_spread_24h,median_spread_24h_ask_below_1,yes_share
+2023,0,,,,,,,,
+2024,0,,,,,,,,
+2025,153,2025-05-01,2025-09-30,0.863,0.68,0.974,0.11,0.1,0.464
+2026,61,2026-05-01,2026-06-30,1.0,0.902,1.0,0.06,0.08,0.508

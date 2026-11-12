@@ -1,0 +1,31 @@
+listed_set,window,hedge,y,n_locations,pearson_r,pearson_p,spearman_rho,spearman_p,pearson_boot_lo,pearson_boot_hi,note
+L_pre,SELECT,baseline,R,82,0.66815,0.0,0.69773,0.0,0.56726,0.77414,
+L_pre,SELECT,baseline,miss_rate,71,0.54524,0.0,0.48228,2e-05,,,miss_rate: locations with >= 10 hot days only
+L_pre,SELECT,baseline,false_payout_rate,82,0.6947,0.0,0.6688,0.0,,,
+L_pre,SELECT,adjusted,R,82,-0.25265,0.02202,-0.20289,0.06753,-0.35249,-0.03787,
+L_pre,SELECT,adjusted,miss_rate,71,0.7478,0.0,0.70336,0.0,,,miss_rate: locations with >= 10 hot days only
+L_pre,SELECT,adjusted,false_payout_rate,82,0.73392,0.0,0.73048,0.0,,,
+L_pre,REPORT,baseline,R,82,0.62749,0.0,0.62683,0.0,0.45204,0.72786,
+L_pre,REPORT,baseline,miss_rate,72,0.3091,0.00824,0.26898,0.02233,,,miss_rate: locations with >= 10 hot days only
+L_pre,REPORT,baseline,false_payout_rate,82,0.67884,0.0,0.65212,0.0,,,
+L_pre,REPORT,adjusted,R,82,-0.21426,0.05324,-0.20593,0.06344,-0.38494,0.01691,
+L_pre,REPORT,adjusted,miss_rate,72,0.77624,0.0,0.69459,0.0,,,miss_rate: locations with >= 10 hot days only
+L_pre,REPORT,adjusted,false_payout_rate,82,0.33494,0.0021,0.20962,0.05875,,,
+L_pre,2015-2025,baseline,R,82,0.64949,0.0,0.66697,0.0,0.56402,0.72201,
+L_pre,2015-2025,baseline,miss_rate,78,0.43185,8e-05,0.37147,0.00081,,,miss_rate: locations with >= 10 hot days only
+L_pre,2015-2025,baseline,false_payout_rate,82,0.69263,0.0,0.66398,0.0,,,
+L_now,SELECT,baseline,R,80,0.61826,0.0,0.69096,0.0,0.53705,0.70383,
+L_now,SELECT,baseline,miss_rate,69,0.66085,0.0,0.60173,0.0,,,miss_rate: locations with >= 10 hot days only
+L_now,SELECT,baseline,false_payout_rate,80,0.67284,0.0,0.64944,0.0,,,
+L_now,SELECT,adjusted,R,80,-0.3274,0.00303,-0.27399,0.01392,-0.45319,-0.03311,
+L_now,SELECT,adjusted,miss_rate,69,0.73074,0.0,0.67378,0.0,,,miss_rate: locations with >= 10 hot days only
+L_now,SELECT,adjusted,false_payout_rate,80,0.73865,0.0,0.70641,0.0,,,
+L_now,REPORT,baseline,R,80,0.58175,0.0,0.63524,0.0,0.36897,0.67661,
+L_now,REPORT,baseline,miss_rate,70,0.50615,1e-05,0.41545,0.00035,,,miss_rate: locations with >= 10 hot days only
+L_now,REPORT,baseline,false_payout_rate,80,0.6585,0.0,0.63138,0.0,,,
+L_now,REPORT,adjusted,R,80,-0.13465,0.23373,-0.11988,0.28953,-0.39139,0.13812,
+L_now,REPORT,adjusted,miss_rate,70,0.80114,0.0,0.70342,0.0,,,miss_rate: locations with >= 10 hot days only
+L_now,REPORT,adjusted,false_payout_rate,80,0.39378,0.0003,0.24569,0.02804,,,
+L_now,2015-2025,baseline,R,80,0.58913,0.0,0.63641,0.0,0.49649,0.659,
+L_now,2015-2025,baseline,miss_rate,76,0.53902,0.0,0.44889,5e-05,,,miss_rate: locations with >= 10 hot days only
+L_now,2015-2025,baseline,false_payout_rate,80,0.66586,0.0,0.6451,0.0,,,

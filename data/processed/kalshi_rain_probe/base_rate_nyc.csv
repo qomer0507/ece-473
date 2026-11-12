@@ -1,0 +1,12 @@
+source,year,n_days,first,last,n_yes,yes_share,n_trace,n_missing,yes_share_if_trace_counts_yes
+KXRAIN-NYC (trace = No),2026,73,2026-07-15,2026-09-30,33,0.452,,,
+KXRAINNYC (trace = Yes),2021,15,2021-09-08,2021-09-30,9,0.6,,,
+KXRAINNYC (trace = Yes),2022,57,2022-05-01,2022-08-12,17,0.298,,,
+KXRAINNYC (trace = Yes),2025,153,2025-05-01,2025-09-30,71,0.464,,,
+KXRAINNYC (trace = Yes),2026,76,2026-05-01,2026-07-15,39,0.513,,,
+"NWS CLI Central Park via IEM (station data, not Kalshi)",2021,153,2021-05-01,2021-09-30,61,0.399,20.0,0.0,0.529
+"NWS CLI Central Park via IEM (station data, not Kalshi)",2022,153,2022-05-01,2022-09-30,48,0.314,15.0,0.0,0.412
+"NWS CLI Central Park via IEM (station data, not Kalshi)",2023,153,2023-05-01,2023-09-30,54,0.353,20.0,0.0,0.484
+"NWS CLI Central Park via IEM (station data, not Kalshi)",2024,153,2024-05-01,2024-09-30,50,0.327,21.0,0.0,0.464
+"NWS CLI Central Park via IEM (station data, not Kalshi)",2025,151,2025-05-01,2025-09-30,52,0.344,19.0,0.0,0.47
+"NWS CLI Central Park via IEM (station data, not Kalshi)",2026,153,2026-05-01,2026-09-30,65,0.425,14.0,0.0,0.516

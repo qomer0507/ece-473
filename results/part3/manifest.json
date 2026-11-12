@@ -1,0 +1,56 @@
+{
+ "label": "SIMULATED. LMSR cost rule only. No real orders, no live chain.",
+ "script": "python -m sim.experiment",
+ "seed": 473,
+ "station_file": "data/raw/region/tmax/USW00014734.csv",
+ "season": "May-Sep",
+ "fit_years": [
+  2015,
+  2019
+ ],
+ "outcome_years": [
+  2020,
+  2025
+ ],
+ "fit_days": 765,
+ "outcome_days": 918,
+ "bounds": [
+  80,
+  82,
+  84,
+  86,
+  88,
+  90,
+  92,
+  94,
+  96,
+  98,
+  100
+ ],
+ "strike": 90,
+ "n_brackets": 12,
+ "alpha": 1.0,
+ "b_grid": [
+  50,
+  200,
+  1000,
+  5000
+ ],
+ "basket_sizes": [
+  10,
+  100,
+  1000
+ ],
+ "hedge_size": 100,
+ "outputs": [
+  "basket_pricing.csv",
+  "sponsor_pnl.csv",
+  "priors.csv",
+  "price_impact.png",
+  "summary.md"
+ ],
+ "observed_inputs": [
+  "station TMAX file (NCEI GHCN-Daily)",
+  "gas_report.json (local Hardhat EVM)"
+ ]
+}

@@ -1,0 +1,9 @@
+city,season,strike_k,market_days,share_exact,share_within_1F,share_nearest_below_k,share_nearest_above_k,median_gap_F,replication_error_days,over_payment_days,shortfall_days,replication_error_rate,hot_days,hot_days_exact,hot_days_within_1F
+NYC,Oct-Apr,90,1099,0.0027,0.0055,0.9973,0.0,-34.0,196,196,0,0.1783,3,2,3
+NYC,May-Sep,90,820,0.1317,0.2927,0.8268,0.0415,-5.0,73,64,9,0.089,86,29,58
+Newark,Oct-Apr,90,41,0.0,0.0244,1.0,0.0,-17.0,0,0,0,0.0,0,0,0
+Newark,May-Sep,90,36,0.0833,0.3056,0.9167,0.0,-4.5,3,3,0,0.0833,0,0,0
+Philadelphia,Oct-Apr,90,415,0.0024,0.0169,0.9976,0.0,-33.0,61,61,0,0.147,2,0,2
+Philadelphia,May-Sep,90,306,0.219,0.4346,0.7124,0.0686,-2.0,11,11,0,0.0359,76,30,59
+Trenton,Oct-Apr,90,41,0.0,0.0244,1.0,0.0,-17.0,0,0,0,0.0,0,0,0
+Trenton,May-Sep,90,36,0.2222,0.3056,0.7778,0.0,-4.0,0,0,0,0.0,0,0,0

@@ -1,0 +1,7 @@
+city,window,market_days,markets,share_markets_fresh_candle,share_markets_with_ask,share_markets_two_sided,mean_bid_ask_spread_cents,median_of_daily_mean_spread_cents,median_of_daily_max_spread_cents,days_full_ladder_asks,mean_sum_of_asks_$,mean_sum_of_bids_$,note
+Newark,2026-08-26 to 2026-11-10,77,462,0.9957,0.9957,0.8225,21.45,8.62,13.0,75,1.9132,0.6827,"Quotes 24 h before close, hourly candle close, at most 6 h stale. Prices only, no depth."
+Philadelphia,2026-08-26 to 2026-11-10,61,366,1.0,1.0,0.7842,1.71,1.6,3.0,61,1.0695,0.9749,"Quotes 24 h before close, hourly candle close, at most 6 h stale. Prices only, no depth."
+Trenton,2026-08-26 to 2026-11-10,77,462,0.9978,0.9978,0.8268,22.76,7.68,15.0,76,1.9682,0.6658,"Quotes 24 h before close, hourly candle close, at most 6 h stale. Prices only, no depth."
+Newark,2026-08-26 to 2026-09-30,36,216,0.9907,0.9907,0.8796,36.07,18.17,34.0,34,2.8394,0.5259,"Quotes 24 h before close, hourly candle close, at most 6 h stale. Prices only, no depth."
+Philadelphia,2026-08-26 to 2026-09-30,20,120,1.0,1.0,0.8417,1.82,1.6,3.0,20,1.082,0.9785,"Quotes 24 h before close, hourly candle close, at most 6 h stale. Prices only, no depth."
+Trenton,2026-08-26 to 2026-09-30,36,216,0.9954,0.9954,0.8796,38.76,14.75,30.0,35,2.9309,0.5009,"Quotes 24 h before close, hourly candle close, at most 6 h stale. Prices only, no depth."

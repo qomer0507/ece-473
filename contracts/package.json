@@ -1,0 +1,20 @@
+{
+  "name": "bracket-lmsr",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ECE 473 Part 3: on-chain LMSR bracket market (testnet only)",
+  "scripts": {
+    "compile": "node scripts/compile.js",
+    "test": "node scripts/compile.js && hardhat test --no-compile"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "2.0.8",
+    "@nomicfoundation/hardhat-ethers": "3.0.8",
+    "@openzeppelin/contracts": "4.9.6",
+    "abdk-libraries-solidity": "3.2.0",
+    "chai": "4.5.0",
+    "ethers": "6.13.4",
+    "hardhat": "2.22.17",
+    "solc": "0.8.26"
+  }
+}

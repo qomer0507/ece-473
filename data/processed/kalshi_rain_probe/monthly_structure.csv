@@ -1,0 +1,5 @@
+series,n_events,first_event,last_event,strikes_per_event_min,strikes_per_event_max,lowest_strike_in,highest_strike_in,strike_type,median_event_volume
+KXRAINNYCM,35,RAINNYCM-24FEB,KXRAINNYCM-26DEC,4,14,1.0,13.0,greater,69717.0
+KXRAINPHILM,1,KXRAINPHILM-26NOV,KXRAINPHILM-26NOV,7,7,1.0,7.0,greater,7260.049999999999
+KXRAINEWRM,1,KXRAINEWRM-26NOV,KXRAINEWRM-26NOV,7,7,1.0,7.0,greater,4315.8099999999995
+KXRAINTTNM,1,KXRAINTTNM-26NOV,KXRAINTTNM-26NOV,7,7,1.0,7.0,greater,674.4100000000001

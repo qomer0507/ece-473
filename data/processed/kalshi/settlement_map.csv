@@ -1,0 +1,13 @@
+city,series,source_named,station_text,cli_code,code_where,first_event,first_date,last_event,last_date,n_events
+NYC,KXHIGHNY,not named in rules_primary,"Central Park, New York",,,HIGHNY-21AUG06,2021-08-06,HIGHNY-22MAR03,2022-03-03,207
+NYC,KXHIGHNY,NWS Daily Climate Report,"Central Park, New York",,,HIGHNY-22MAR04,2022-03-04,KXHIGHNY-25MAR04,2025-03-04,1096
+NYC,KXHIGHNY,NWS Climatological Report (Daily),"Central Park, New York",,,KXHIGHNY-25MAR05,2025-03-05,KXHIGHNY-26AUG13,2026-08-13,527
+NYC,KXHIGHNY,The Weather Company,New York City,CLINYC,rules_secondary,KXHIGHNY-26AUG14,2026-08-14,KXHIGHNY-26AUG14,2026-08-14,1
+NYC,KXHIGHNY,The Weather Company,New York City,CLINYC,rules_primary,KXHIGHNY-26AUG15,2026-08-15,KXHIGHNY-26NOV10,2026-11-10,88
+Philadelphia,KXHIGHPHIL,NWS Daily Climate Report,"Philadelphia, PA",,,KXHIGHPHIL-24NOV20,2024-11-20,KXHIGHPHIL-25MAR04,2025-03-04,105
+Philadelphia,KXHIGHPHIL,NWS Climatological Report (Daily),"Philadelphia, PA",,,KXHIGHPHIL-25MAR05,2025-03-05,KXHIGHPHIL-25APR25,2025-04-25,52
+Philadelphia,KXHIGHPHIL,NWS Climatological Report (Daily),Philadelphia International Airport,,,KXHIGHPHIL-25APR26,2025-04-26,KXHIGHPHIL-26AUG13,2026-08-13,475
+Philadelphia,KXHIGHPHIL,The Weather Company,Philadelphia,CLIPHL,rules_secondary,KXHIGHPHIL-26AUG14,2026-08-14,KXHIGHPHIL-26AUG14,2026-08-14,1
+Philadelphia,KXHIGHPHIL,The Weather Company,Philadelphia,CLIPHL,rules_primary,KXHIGHPHIL-26AUG15,2026-08-15,KXHIGHPHIL-26NOV10,2026-11-10,88
+Newark,KXHIGHTEWR,The Weather Company,Newark,CLIEWR,rules_primary,KXHIGHTEWR-26AUG26,2026-08-26,KXHIGHTEWR-26NOV10,2026-11-10,77
+Trenton,KXHIGHTTTN,The Weather Company,Trenton,CLITTN,rules_primary,KXHIGHTTTN-26AUG26,2026-08-26,KXHIGHTTTN-26NOV10,2026-11-10,77

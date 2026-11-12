@@ -1,0 +1,11 @@
+{
+ "compiler": "0.8.26+commit.8a97fa7a.Emscripten.clang",
+ "deployedBytes": {
+  "BracketLMSR": 13901,
+  "TemperatureOracle": 1918,
+  "MockOracle": 1466,
+  "MathHarness": 3806,
+  "ReentrantTrader": 1224,
+  "RejectingTrader": 436
+ }
+}

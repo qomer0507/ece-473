@@ -1,0 +1,10 @@
+station_id,name,lat,lon,elev_m,city,role,reference_id,distance_km,coord_source,source_url
+USW00094728,NY CITY CENTRAL PARK,40.77898,-73.96925,42.7,NYC,reference,USW00094728,0.0,data/raw/ncei_spotcheck/ncei_20190720_20190721_set2_tenthsC.csv,https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/USW00094728.csv.gz
+USW00014732,NY LAGUARDIA AP,40.77945,-73.88027,3.0,NYC,local,USW00094728,7.49,data/raw/ncei_spotcheck/ncei_20190720_20190721_set1_tenthsC.csv,https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/USW00014732.csv.gz
+USW00094741,TETERBORO AP,40.85898,-74.05616,0.8,NYC,local,USW00094728,11.52,data/raw/ncei_spotcheck/ncei_20250728_20250729_tenthsC.csv,https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/USW00094741.csv.gz
+USW00014734,NEWARK LIBERTY INTL AP,40.68275,-74.16927,1.9,NYC,local,USW00094728,19.96,data/raw/ncei_spotcheck/ncei_20190720_20190721_set2_tenthsC.csv,https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/USW00014734.csv.gz
+USW00094789,NY JFK INTL AP,40.63915,-73.7639,2.7,NYC,local,USW00094728,23.27,data/raw/ncei_spotcheck/ncei_20190720_20190721_set1_tenthsC.csv,https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/USW00094789.csv.gz
+USW00014792,TRENTON MERCER CO AP,40.27681,-74.81587,57.9,Trenton,reference,USW00014792,0.0,data/raw/ncei_spotcheck/ncei_20190720_20190721_set2_tenthsC.csv,https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/USW00014792.csv.gz
+USW00054786,DOYLESTOWN AP,40.33015,-75.12284,120.5,Trenton,local,USW00014792,26.7,data/raw/ncei_spotcheck/ncei_20190720_20190721_set2_tenthsC.csv,https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/USW00054786.csv.gz
+USW00094732,PHILADELPHIA NE AP,40.07892,-75.01336,32.9,Trenton,local,USW00014792,27.67,data/raw/ncei_spotcheck/ncei_20190720_20190721_set1_tenthsC.csv,https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/USW00094732.csv.gz
+USW00054785,SOMERVILLE CENTRAL JERSEY RGNL AP,40.62406,-74.66898,30.1,Trenton,local,USW00014792,40.56,data/raw/ncei_spotcheck/ncei_20190720_20190721_set1_tenthsC.csv,https://www.ncei.noaa.gov/pub/data/ghcn/daily/by_station/USW00054785.csv.gz
