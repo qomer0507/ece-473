@@ -47,10 +47,11 @@ def test_choose_n_hand_example():
     d = np.array([2.0, 6.0, 10.0])
     pay = d.copy()
     prem = np.array([4.0, 4.0, 4.0])
-    # net(n) = d - n d + 4 n; season 3: 10 - 6n; above the reference 6 while n < 2/3 -> HE rises with n up to 1
+    # net(n) = d - n d + 4 n; season 3: 10 - 6n, above the reference 6 while n < 2/3; season 2: 6 - 2n <= 6.
+    # So HE = 1 for every n >= 0.7 and the tie goes to the smallest such n.
     n, he = choose_n(d, pay, prem, 6.0)
-    assert n == 1.0
-    assert he == pytest.approx(1.0)       # at n = 1 every season costs exactly 4 < 6: SV = 0
+    assert n == 0.7
+    assert he == pytest.approx(1.0)
     # a useless contract (never pays, costs money): every n gives HE <= 0 and ties go to the smallest n
     n2, he2 = choose_n(d, np.zeros(3), prem, 6.0)
     assert n2 == 0.05 and he2 < 0
@@ -99,4 +100,4 @@ def test_hand_checked_he_by_lead():
 
 def test_split_60_40():
     assert split_60_40([2004, 2005, 2006, 2007, 2008]) == ([2004, 2005, 2006], [2007, 2008])
-    assert split_60_40(list(range(2004, 2027))) == (list(range(2004, 2018)), list(range(2018, 2027)))
+    assert split_60_40(list(range(2004, 2027))) == (list(range(2004, 2017)), list(range(2017, 2027)))  # floor(13.8)

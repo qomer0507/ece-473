@@ -94,14 +94,14 @@ def test_pop_table_one_row_per_day_and_lead():
     rows = []
     for d in ("2025-07-10", "2025-07-11"):
         day = pd.Timestamp(d)
-        for k in (1, 2, 3):
+        for k in (0, 1, 2):   # 00Z runs on D, D-1, D-2: leads 1.17, 2.17, 3.17 days
             rt = (day - pd.Timedelta(days=k)).strftime("%Y-%m-%d 00:00")
-            rows.append((rt, (day + pd.Timedelta(hours=12)).strftime("%Y-%m-%d %H:%M"), np.nan, 0.1 * k, np.nan))
-            rows.append((rt, (day + pd.Timedelta(days=1)).strftime("%Y-%m-%d %H:%M"), np.nan, 0.1 * k, np.nan))
+            rows.append((rt, (day + pd.Timedelta(hours=12)).strftime("%Y-%m-%d %H:%M"), np.nan, 0.1 * (k + 1), np.nan))
+            rows.append((rt, (day + pd.Timedelta(days=1)).strftime("%Y-%m-%d %H:%M"), np.nan, 0.1 * (k + 1), np.nan))
     t = pop_table(_mos(rows), pd.to_datetime(["2025-07-10", "2025-07-11"]), leads=(1.5, 2, 3))
     assert len(t) == 6
     assert t.groupby(["date", "target_lead"]).size().max() == 1
-    # lead 2 -> the run 2 days before the day (lead 2.1667), whose p12 are 0.2 and 0.2
+    # lead 2 -> the run on D-1 (lead 2.1667), whose p12 are 0.2 and 0.2
     assert t[t["target_lead"] == 2].iloc[0]["pop"] == pytest.approx(1 - 0.8 * 0.8)
 
 

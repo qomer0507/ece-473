@@ -47,11 +47,14 @@ def close_time_utc(day: pd.Timestamp) -> pd.Timestamp:
 
 
 def read_mos_csv(path: Path) -> pd.DataFrame:
-    """Read one cached archive CSV; keep runtime, ftime, p06, p12, p24 (percent -> probability)."""
+    """Read one cached archive CSV; keep runtime, ftime, p06, p12, p24 (percent -> probability).
+
+    Values outside 0-100 are treated as missing (seen: 161 p12 rows of MEX KTTN 2020 at the 192-h step)."""
     d = pd.read_csv(path, low_memory=False)
     keep = pd.DataFrame({"runtime": pd.to_datetime(d["runtime"]), "ftime": pd.to_datetime(d["ftime"])})
     for c in ("p06", "p12", "p24"):
-        keep[c] = pd.to_numeric(d[c], errors="coerce") / 100.0 if c in d.columns else np.nan
+        v = pd.to_numeric(d[c], errors="coerce") if c in d.columns else pd.Series(np.nan, index=d.index)
+        keep[c] = v.where((v >= 0) & (v <= 100)) / 100.0   # a few archive rows hold garbage such as 309
     return keep.sort_values(["runtime", "ftime"]).reset_index(drop=True)
 
 

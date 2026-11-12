@@ -65,3 +65,11 @@ Where the pre-registration leaves a rule open, the literal reading is used. Code
   (NCEI) hourly files row for row (0 mismatches in present or precip_in).
 - 2026-11-12 23:03 src/reach/{rain_geo,rain_pairs,rain_curve}.py, scripts/reach_rain_{build,pairs,report}.py,
   tests/test_reach_rain_{pairs,curve}.py (13 pass). Reading choices above written down before any pair was scored.
+- 2026-11-12 23:07 First pass of scripts/reach_rain_build.py on the 21 stations pulled so far plus the 12 Phase 0
+  stations, then reach_rain_pairs.py and reach_rain_report.py, to check that the pipeline runs end to end
+  (30 kept stations, 222 pairs). Numbers not read as results; everything is rerun when the pull is complete.
+  Figure opened: the Trenton-PNE label sat on the curve; moved below the point. No rule changed.
+14. (added 2026-11-12 23:12, before the full build) A gauge that reports 0.00 every hour passes the 90% rule
+    (Phase 0: a failure without PNO cannot be caught). The SPEC rule is kept as the main rule; the station table
+    gets n_usable_zero_rain (usable seasons whose opening-hours rain total is 0.00 in) and such stations are
+    listed in the summary. Seen in the smoke test: SWF, 12 usable seasons, 0 loss days (not kept anyway).

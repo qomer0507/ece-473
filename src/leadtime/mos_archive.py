@@ -83,11 +83,21 @@ def pull_one(model: str, station: str, year: int, raw: Path = RAW_MOS, gap: floa
     return path, True
 
 
+CHECK_STATIONS = ("KEWR", "KNYC")   # the other two Kalshi cities, 2025-2026 only, for the observed-end price check
+CHECK_YEARS = (2025, 2026)
+
+
 def pull_plan(models=("GFS", "MEX", "AVN", "NBS", "NBE"), stations=STATIONS) -> list[tuple[str, str, int]]:
-    """(model, station, year) in pull order: GFS first (longest record), then MEX, AVN, NBS, NBE."""
+    """(model, station, year) in pull order: GFS first (longest record), then MEX, AVN, NBS, NBE; then the
+    price-check stations for 2025-2026 (GFS, MEX, NBS)."""
     plan = []
     for m in models:
         for y in MODEL_YEARS[m]:
             for s in stations:
                 plan.append((m, s, y))
+    for m in ("GFS", "MEX", "NBS"):
+        if m in models:
+            for y in CHECK_YEARS:
+                for s in CHECK_STATIONS:
+                    plan.append((m, s, y))
     return plan

@@ -49,7 +49,7 @@ def figure(curve, pairs, numbers, path):
     if tp and tp.get("he") == tp.get("he"):
         ax.scatter([tp["dist_km"]], [tp["he"]], s=70, color=ORANGE, zorder=5, edgecolor="white", linewidths=1)
         ax.annotate(f"Trenton-PNE: HE {tp['he']:.2f} at {tp['dist_km']:.0f} km",
-                    (tp["dist_km"], tp["he"]), xytext=(tp["dist_km"] + 12, min(tp["he"] + 0.35, 1.05)),
+                    (tp["dist_km"], tp["he"]), xytext=(tp["dist_km"] + 14, tp["he"] - 0.55),
                     fontsize=9, color=ORANGE, arrowprops=dict(arrowstyle="-", color=ORANGE, lw=0.8))
     lo = max(-2.0, float(np.nanpercentile(p["he"], 1)) - 0.1)
     ax.set_ylim(lo, 1.08)
@@ -90,6 +90,10 @@ def summary(curve, curve_s, reg, numbers, pairs, excluded, stations, table):
     L.append(f"- Usable seasons per kept station: median {int(k['n_usable'].median())}, range "
              f"{int(k['n_usable'].min())}-{int(k['n_usable'].max())}; {int((k['n_usable_isd'] > 0).sum())} "
              f"stations have seasons from the NCEI archive (before 1997).")
+    z = k[k["n_usable_zero_rain"] > 0]
+    L.append(f"- Kept stations with a usable season whose opening-hours rain total is 0.00 in (gauge silent, not "
+             f"caught by the 90% rule): {len(z)}" + (": " + ", ".join(f"{r.sid} ({int(r.n_usable_zero_rain)})"
+                                                                    for r in z.itertuples()) if len(z) else "") + ".")
     L.append(f"- Pairs within 200 km (S with climate report, G any kept station, plus S = G): "
              f"{numbers['n_pairs_built']}. Scored under the main rule (>= 20 joint usable seasons): "
              f"{numbers['n_pairs_scored']}, HE defined for {numbers['n_pairs_he_defined']}. Excluded: "

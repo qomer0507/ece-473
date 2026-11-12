@@ -172,27 +172,39 @@ def main() -> None:
 
 
 def price_check(a_main: float, u: float) -> None:
-    """Observed-end check: modelled ask at lead 1.5 (GFS 18Z run of D-1) vs the real 36-hour ask, 2025-2026.
-    Only aggregates are written."""
+    """Observed-end check: modelled ask at lead 1.5 (GFS 18Z run of D-1) vs the real 36-hour ask on the same
+    days (every quote-table market day with a buyable 36-h ask, May-Sep 2025-2026, not only park-season days).
+    PoPs are formed from the raw MOS cache for those dates. Only aggregates are written."""
+    from src.leadtime.mos_archive import MODEL_YEARS
+    from src.leadtime.mos_pop import load_model, pop_table
     q = pd.read_csv(QUOTES)
     q["date"] = pd.to_datetime(q["date"])
     rows = []
-    for st, city in (("TTN", "TTN"), ("PHL", "PHIL")):
-        mos = pd.read_parquet(LT / f"mos_pop_{st}.parquet")
-        for line, lead in (("GFS", 1.5), ("GFS-p06x4", 1.0), ("GFS-p06x4", 1.5), ("MEX", 1.5), ("MEX-p12x2", 1.5), ("NBS", 1.5)):
-            pm = pop_map(mos, line, lead)
-            if not pm:
+    checks = (("GFS", "GFS", "pop", 1.5), ("GFS", "GFS-p06x4", "pop_p06", 1.0), ("GFS", "GFS-p06x4", "pop_p06", 1.5),
+              ("MEX", "MEX", "pop", 1.5), ("MEX", "MEX-p12x2", "pop_p12", 1.5), ("NBS", "NBS", "pop", 1.5),
+              ("NBS", "NBS-p06x4", "pop_p06", 1.0))
+    for city, icao in (("TTN", "KTTN"), ("PHIL", "KPHL"), ("EWR", "KEWR"), ("NYC", "KNYC")):
+        qc = q[(q["city"] == city) & q["buyable_36"].fillna(False).astype(bool)]
+        if qc.empty:
+            continue
+        for model, line, col, lead in checks:
+            mos = load_model(model, icao, [y for y in MODEL_YEARS[model] if y >= 2021])
+            if mos.empty:
                 continue
-            qq = q[(q["city"] == city) & (q["series"] == "KXRAIN") & q["buyable_36"].fillna(False).astype(bool)]
-            qq = qq[qq["date"].isin(list(pm.keys()))]
+            t = pop_table(mos, qc["date"].drop_duplicates(), (lead,), column=col)
+            pm = dict(zip(pd.DatetimeIndex(t["date"]), t[col].astype(float)))
+            qq = qc[qc["date"].isin(list(pm.keys()))]
             if qq.empty:
                 continue
             for a_label, a in (("main", a_main), ("markup_0.068", A_SENS)):
                 mod = np.array([modelled_ask(pm[d], a) for d in qq["date"]])
                 obs = qq["ask_36"].astype(float).to_numpy()
                 res = qq["result"].astype(int).to_numpy()
-                rows.append({"station": st, "line": line, "target_lead": lead, "markup": a_label, "a": a,
-                             "n_days": len(qq), "mean_observed_ask_36h": obs.mean(), "mean_modelled_ask": mod.mean(),
+                rows.append({"city": city, "station": icao, "line": line, "target_lead": lead,
+                             "mean_lead_days": float(t["lead_days"].mean()), "markup": a_label, "a": a,
+                             "n_days": len(qq), "n_markets_buyable_36h": len(qc),
+                             "series": "+".join(sorted(qq["series"].unique())), "years": "+".join(str(y) for y in sorted(qq["year"].unique())),
+                             "mean_observed_ask_36h": obs.mean(), "mean_modelled_ask": mod.mean(),
                              "mean_difference_modelled_minus_observed": mod.mean() - obs.mean(),
                              "rmse_daily": float(np.sqrt(np.mean((mod - obs) ** 2))),
                              "corr_daily": float(np.corrcoef(mod, obs)[0, 1]) if len(qq) > 2 else np.nan,
@@ -201,10 +213,12 @@ def price_check(a_main: float, u: float) -> None:
                              "mean_observed_ask_dry": obs[res == 0].mean() if (res == 0).any() else np.nan,
                              "mean_modelled_ask_dry": mod[res == 0].mean() if (res == 0).any() else np.nan,
                              "mean_pop": float(np.mean([pm[d] for d in qq["date"]])), "rain_share": res.mean(),
-                             "label": "observed ask vs MODELLED ask on the same days (2026 KXRAIN)"})
+                             "brier_observed_ask": float(np.mean((obs - res) ** 2)),
+                             "brier_pop": float(np.mean((np.array([pm[d] for d in qq["date"]]) - res) ** 2)),
+                             "label": "observed 36-h ask vs MODELLED ask on the same days"})
     t = pd.DataFrame(rows)
     t.to_csv(RES / "leadtime_price_check.csv", index=False, float_format="%.4f")
-    print(t[["station", "line", "target_lead", "markup", "n_days", "mean_observed_ask_36h", "mean_modelled_ask",
+    print(t[["city", "line", "target_lead", "markup", "n_days", "years", "mean_observed_ask_36h", "mean_modelled_ask",
              "mean_difference_modelled_minus_observed", "rmse_daily", "corr_daily"]].to_string(index=False))
 
 

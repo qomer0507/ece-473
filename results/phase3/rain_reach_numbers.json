@@ -1,0 +1,66 @@
+{
+  "n_candidates": 121,
+  "n_kept": 30,
+  "n_kept_cli": 19,
+  "n_pairs_built": 222,
+  "n_pairs_scored": 222,
+  "n_pairs_he_defined": 221,
+  "n_pairs_excluded": {},
+  "n_gauges_scored": 30,
+  "n_settlement_scored": 19,
+  "reach_pair_boot": {
+    "reach_km": 80.0,
+    "contiguous_reach_km": 0.0,
+    "same_station_lo_above_0": true
+  },
+  "reach_gauge_boot": {
+    "reach_km": 80.0,
+    "contiguous_reach_km": 0.0,
+    "same_station_lo_above_0": true
+  },
+  "reach_sensitivity_pair_boot": {
+    "reach_km": 80.0,
+    "contiguous_reach_km": 0.0,
+    "same_station_lo_above_0": true
+  },
+  "reach_sensitivity_gauge_boot": {
+    "reach_km": 80.0,
+    "contiguous_reach_km": 0.0,
+    "same_station_lo_above_0": true
+  },
+  "trenton_pne": {
+    "s_id": "TTN",
+    "g_id": "PNE",
+    "dist_km": 27.67279717471248,
+    "same_station": false,
+    "elev_s_m": 65.0,
+    "elev_g_m": 37.0,
+    "elev_diff_m": 28.0,
+    "coast_s": false,
+    "coast_g": false,
+    "coast_km_s": 51.41,
+    "coast_km_g": 72.65,
+    "n_joint_seasons": 28,
+    "n_train": 16,
+    "n_report": 12,
+    "first_joint": 1999,
+    "last_joint": 2026,
+    "n_joint_days": 2690,
+    "mean_c_s": 5.214285714285714,
+    "mean_c_g": 5.285714285714286,
+    "trigger_agreement": 0.9509293680297398,
+    "count_corr": 0.6589027581525255,
+    "d": 8,
+    "premium": 0.525,
+    "reference": 4.875,
+    "train_he": 0.02402206896551695,
+    "he": -0.3522580645161293,
+    "he_defined": true,
+    "status": "ok"
+  },
+  "trenton_pne_scored": true,
+  "same_station": {
+    "n": 19,
+    "mean_he": 0.834897521132989
+  }
+}

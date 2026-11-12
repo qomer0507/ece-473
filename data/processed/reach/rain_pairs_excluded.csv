@@ -1,0 +1,1 @@
+s_id,g_id,dist_km,same_station,elev_s_m,elev_g_m,elev_diff_m,coast_s,coast_g,coast_km_s,coast_km_g,n_joint_seasons,n_train,n_report,first_joint,last_joint,n_joint_days,mean_c_s,mean_c_g,trigger_agreement,count_corr,d,premium,reference,train_he,he,he_defined,status

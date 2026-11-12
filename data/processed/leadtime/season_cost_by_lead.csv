@@ -1,0 +1,233 @@
+case,lead_label,window,season,premium,payout,mean_ask,n_days_x,n_days_y,D_park,C_S,K_S,n_contracts
+A (Trenton same-station),1 (p06x4),TRAIN,2004,50.0293,31.1678,0.5200,98,98,5,5,34,0.0500
+A (Trenton same-station),1 (p06x4),TRAIN,2005,41.0774,22.9175,0.5265,79,79,5,5,25,0.0500
+A (Trenton same-station),1 (p06x4),TRAIN,2006,45.7093,33.0012,0.5191,90,90,8,8,36,0.0500
+A (Trenton same-station),1 (p06x4),TRAIN,2007,40.7099,25.6676,0.4085,100,100,2,2,28,0.0500
+A (Trenton same-station),1 (p06x4),TRAIN,2008,43.7958,28.4177,0.4398,100,100,4,4,31,0.0500
+A (Trenton same-station),1 (p06x4),TRAIN,2009,57.0504,42.1682,0.5458,107,107,12,12,46,0.0500
+A (Trenton same-station),1 (p06x4),TRAIN,2010,42.7607,24.7509,0.4244,101,101,2,2,27,0.0500
+A (Trenton same-station),1 (p06x4),TRAIN,2011,30.7396,18.3340,0.3808,80,80,1,1,20,0.0500
+A (Trenton same-station),1 (p06x4),TRAIN,2012,46.8951,33.0012,0.4798,99,99,6,6,36,0.0500
+A (Trenton same-station),1 (p06x4),TRAIN,2013,52.5503,38.5014,0.5278,102,102,12,12,42,0.0500
+A (Trenton same-station),1 (p06x4),TRAIN,2014,43.7784,33.0012,0.4497,99,99,3,3,36,0.0500
+A (Trenton same-station),1 (p06x4),REPORT,2015,55.5094,34.8346,0.5171,109,109,2,2,38,0.0500
+A (Trenton same-station),1 (p06x4),REPORT,2016,50.0334,29.3344,0.5039,100,100,5,5,32,0.0500
+A (Trenton same-station),1 (p06x4),REPORT,2017,51.5494,33.9179,0.5267,100,100,6,6,37,0.0500
+A (Trenton same-station),1 (p06x4),REPORT,2018,52.1828,33.9179,0.5417,99,99,7,7,37,0.0500
+A (Trenton same-station),1 (p06x4),REPORT,2019,50.8619,35.7513,0.5166,101,101,8,8,39,0.0500
+A (Trenton same-station),1 (p06x4),REPORT,2020,54.8744,37.5847,0.5224,107,107,7,7,41,0.0500
+A (Trenton same-station),1 (p06x4),REPORT,2021,55.4771,37.5847,0.5766,99,99,5,5,41,0.0500
+A (Trenton same-station),1 (p06x4),REPORT,2022,40.5032,22.0008,0.4338,94,94,1,1,24,0.0500
+A (Trenton same-station),1 (p06x4),REPORT,2023,41.8683,29.3344,0.4485,95,95,6,6,32,0.0500
+A (Trenton same-station),1 (p06x4),REPORT,2024,47.5484,29.3344,0.4885,99,99,5,5,32,0.0500
+A (Trenton same-station),1 (p06x4),REPORT,2025,47.2695,36.6680,0.4874,100,100,5,5,40,0.0500
+A (Trenton same-station),1 (p06x4),REPORT,2026,51.1019,34.8346,0.4792,109,109,7,7,38,0.0500
+A (Trenton same-station),1.5,TRAIN,2004,50.9768,31.1678,0.5279,98,98,5,5,34,0.0500
+A (Trenton same-station),1.5,TRAIN,2005,39.6665,22.9175,0.5054,79,79,5,5,25,0.0500
+A (Trenton same-station),1.5,TRAIN,2006,43.8259,33.0012,0.4960,90,90,8,8,36,0.0500
+A (Trenton same-station),1.5,TRAIN,2007,40.2123,25.6676,0.4025,100,100,2,2,28,0.0500
+A (Trenton same-station),1.5,TRAIN,2008,43.5966,28.4177,0.4370,100,100,4,4,31,0.0500
+A (Trenton same-station),1.5,TRAIN,2009,55.7845,42.1682,0.5312,107,107,12,12,46,0.0500
+A (Trenton same-station),1.5,TRAIN,2010,42.8465,24.7509,0.4245,101,101,2,2,27,0.0500
+A (Trenton same-station),1.5,TRAIN,2011,30.2387,18.3340,0.3748,80,80,1,1,20,0.0500
+A (Trenton same-station),1.5,TRAIN,2012,46.2975,33.0012,0.4726,99,99,6,6,36,0.0500
+A (Trenton same-station),1.5,TRAIN,2013,53.8670,38.5014,0.5405,102,102,12,12,42,0.0500
+A (Trenton same-station),1.5,TRAIN,2014,42.8192,33.0012,0.4379,99,99,3,3,36,0.0500
+A (Trenton same-station),1.5,REPORT,2015,52.6927,34.8346,0.4906,109,109,2,2,38,0.0500
+A (Trenton same-station),1.5,REPORT,2016,47.5066,29.3344,0.4770,100,100,5,5,32,0.0500
+A (Trenton same-station),1.5,REPORT,2017,51.2060,33.9179,0.5209,100,100,6,6,37,0.0500
+A (Trenton same-station),1.5,REPORT,2018,50.1127,33.9179,0.5193,99,99,7,7,37,0.0500
+A (Trenton same-station),1.5,REPORT,2019,52.5353,35.7513,0.5325,101,101,8,8,39,0.0500
+A (Trenton same-station),1.5,REPORT,2020,54.4060,37.5847,0.5166,107,107,7,7,41,0.0500
+A (Trenton same-station),1.5,REPORT,2021,54.9453,37.5847,0.5691,99,99,5,5,41,0.0500
+A (Trenton same-station),1.5,REPORT,2022,39.9456,22.0008,0.4248,94,94,1,1,24,0.0500
+A (Trenton same-station),1.5,REPORT,2023,41.4341,29.3344,0.4424,95,95,6,6,32,0.0500
+A (Trenton same-station),1.5,REPORT,2024,47.4517,29.3344,0.4855,99,99,5,5,32,0.0500
+A (Trenton same-station),1.5,REPORT,2025,45.7969,36.6680,0.4698,100,100,5,5,40,0.0500
+A (Trenton same-station),1.5,REPORT,2026,53.1843,34.8346,0.4962,109,109,7,7,38,0.0500
+A (Trenton same-station),2,TRAIN,2004,51.0050,31.1678,0.5260,98,98,5,5,34,0.0500
+A (Trenton same-station),2,TRAIN,2005,38.6781,22.9175,0.4909,79,79,5,5,25,0.0500
+A (Trenton same-station),2,TRAIN,2006,46.1509,33.0012,0.5220,90,90,8,8,36,0.0500
+A (Trenton same-station),2,TRAIN,2007,39.9890,25.6676,0.3981,100,100,2,2,28,0.0500
+A (Trenton same-station),2,TRAIN,2008,42.2640,28.4177,0.4218,100,100,4,4,31,0.0500
+A (Trenton same-station),2,TRAIN,2009,56.5828,42.1682,0.5377,107,107,12,12,46,0.0500
+A (Trenton same-station),2,TRAIN,2010,41.8798,24.7509,0.4132,101,101,2,2,27,0.0500
+A (Trenton same-station),2,TRAIN,2011,29.9071,18.3340,0.3696,80,80,1,1,20,0.0500
+A (Trenton same-station),2,TRAIN,2012,48.1775,33.0012,0.4908,99,99,6,6,36,0.0500
+A (Trenton same-station),2,TRAIN,2013,53.8928,38.5014,0.5395,102,102,12,12,42,0.0500
+A (Trenton same-station),2,TRAIN,2014,45.0659,33.0012,0.4616,99,99,3,3,36,0.0500
+A (Trenton same-station),2,REPORT,2015,53.9827,34.8346,0.5016,109,109,2,2,38,0.0500
+A (Trenton same-station),2,REPORT,2016,49.3091,29.3344,0.4942,100,100,5,5,32,0.0500
+A (Trenton same-station),2,REPORT,2017,50.5951,33.9179,0.5126,100,100,6,6,37,0.0500
+A (Trenton same-station),2,REPORT,2018,50.9702,33.9179,0.5267,99,99,7,7,37,0.0500
+A (Trenton same-station),2,REPORT,2019,52.0686,35.7513,0.5267,101,101,8,8,39,0.0500
+A (Trenton same-station),2,REPORT,2020,53.9968,37.5847,0.5118,107,107,7,7,41,0.0500
+A (Trenton same-station),2,REPORT,2021,54.0886,37.5847,0.5596,99,99,5,5,41,0.0500
+A (Trenton same-station),2,REPORT,2022,39.4364,22.0008,0.4194,94,94,1,1,24,0.0500
+A (Trenton same-station),2,REPORT,2023,42.5441,29.3344,0.4537,95,95,6,6,32,0.0500
+A (Trenton same-station),2,REPORT,2024,47.4442,29.3344,0.4853,99,99,5,5,32,0.0500
+A (Trenton same-station),2,REPORT,2025,44.2310,36.6680,0.4529,100,100,5,5,40,0.0500
+A (Trenton same-station),2,REPORT,2026,53.7493,34.8346,0.5014,109,109,7,7,38,0.0500
+A (Trenton same-station),3,TRAIN,2004,51.0242,31.1678,0.5249,98,98,5,5,34,0.0500
+A (Trenton same-station),3,TRAIN,2005,40.8665,22.9175,0.5187,79,79,5,5,25,0.0500
+A (Trenton same-station),3,TRAIN,2006,47.5709,33.0012,0.5363,90,90,8,8,36,0.0500
+A (Trenton same-station),3,TRAIN,2007,44.0223,25.6676,0.4385,100,100,2,2,28,0.0500
+A (Trenton same-station),3,TRAIN,2008,45.2040,28.4177,0.4505,100,100,4,4,31,0.0500
+A (Trenton same-station),3,TRAIN,2009,58.1510,42.1682,0.5494,107,107,12,12,46,0.0500
+A (Trenton same-station),3,TRAIN,2010,46.4148,24.7509,0.4564,101,101,2,2,27,0.0500
+A (Trenton same-station),3,TRAIN,2011,32.9679,18.3340,0.4073,80,80,1,1,20,0.0500
+A (Trenton same-station),3,TRAIN,2012,50.0509,33.0012,0.5092,99,99,6,6,36,0.0500
+A (Trenton same-station),3,TRAIN,2013,55.4994,38.5014,0.5533,102,102,12,12,42,0.0500
+A (Trenton same-station),3,TRAIN,2014,48.3934,33.0012,0.4938,99,99,3,3,36,0.0500
+A (Trenton same-station),3,REPORT,2015,52.6243,34.8346,0.4863,109,109,2,2,38,0.0500
+A (Trenton same-station),3,REPORT,2016,47.6357,29.3344,0.4762,100,100,5,5,32,0.0500
+A (Trenton same-station),3,REPORT,2017,49.8492,33.9179,0.5035,100,100,6,6,37,0.0500
+A (Trenton same-station),3,REPORT,2018,49.3243,33.9179,0.5075,99,99,7,7,37,0.0500
+A (Trenton same-station),3,REPORT,2019,49.4677,35.7513,0.4981,101,101,8,8,39,0.0500
+A (Trenton same-station),3,REPORT,2020,55.5210,37.5847,0.5248,107,107,7,7,41,0.0500
+A (Trenton same-station),3,REPORT,2021,53.4510,37.5847,0.5492,99,99,5,5,41,0.0500
+A (Trenton same-station),3,REPORT,2022,40.8006,22.0008,0.4329,94,94,1,1,24,0.0500
+A (Trenton same-station),3,REPORT,2023,44.8283,29.3344,0.4761,95,95,6,6,32,0.0500
+A (Trenton same-station),3,REPORT,2024,49.5783,29.3344,0.5049,99,99,5,5,32,0.0500
+A (Trenton same-station),3,REPORT,2025,43.7751,36.6680,0.4448,100,100,5,5,40,0.0500
+A (Trenton same-station),3,REPORT,2026,52.4251,34.8346,0.4865,109,109,7,7,38,0.0500
+A (Trenton same-station),4,REPORT,2021,50.0168,37.5847,0.5117,99,99,5,5,41,0.0500
+A (Trenton same-station),4,REPORT,2022,38.6538,22.0008,0.4065,94,94,1,1,24,0.0500
+A (Trenton same-station),4,REPORT,2023,42.8749,29.3344,0.4534,95,95,6,6,32,0.0500
+A (Trenton same-station),4,REPORT,2024,47.0290,29.3344,0.4761,99,99,5,5,32,0.0500
+A (Trenton same-station),4,REPORT,2025,42.1725,36.6680,0.4256,100,100,5,5,40,0.0500
+A (Trenton same-station),4,REPORT,2026,49.5775,34.8346,0.4577,109,109,7,7,38,0.0500
+A (Trenton same-station),5,REPORT,2021,49.7701,37.5847,0.5067,99,99,5,5,41,0.0500
+A (Trenton same-station),5,REPORT,2022,41.2796,22.0008,0.4328,94,94,1,1,24,0.0500
+A (Trenton same-station),5,REPORT,2023,42.7490,29.3344,0.4485,95,95,6,6,32,0.0500
+A (Trenton same-station),5,REPORT,2024,47.1982,29.3344,0.4748,99,99,5,5,32,0.0500
+A (Trenton same-station),5,REPORT,2025,44.1000,36.6680,0.4418,100,100,5,5,40,0.0500
+A (Trenton same-station),5,REPORT,2026,49.2224,34.8346,0.4504,109,109,7,7,38,0.0500
+A (Trenton same-station),6,REPORT,2021,50.2100,37.5847,0.5087,99,99,5,5,41,0.0500
+A (Trenton same-station),6,REPORT,2022,43.2371,22.0008,0.4527,94,94,1,1,24,0.0500
+A (Trenton same-station),6,REPORT,2023,42.4414,29.3344,0.4424,95,95,6,6,32,0.0500
+A (Trenton same-station),6,REPORT,2024,48.5298,29.3344,0.4875,99,99,5,5,32,0.0500
+A (Trenton same-station),6,REPORT,2025,45.2399,36.6680,0.4518,100,100,5,5,40,0.0500
+A (Trenton same-station),6,REPORT,2026,51.0307,34.8346,0.4643,109,109,7,7,38,0.0500
+A (Trenton same-station),7,REPORT,2021,48.7225,37.5847,0.4924,99,99,5,5,41,0.0500
+A (Trenton same-station),7,REPORT,2022,41.1437,22.0008,0.4287,94,94,1,1,24,0.0500
+A (Trenton same-station),7,REPORT,2023,41.3772,29.3344,0.4297,95,95,6,6,32,0.0500
+A (Trenton same-station),7,REPORT,2024,46.7356,29.3344,0.4673,99,99,5,5,32,0.0500
+A (Trenton same-station),7,REPORT,2025,45.3941,36.6680,0.4519,100,100,5,5,40,0.0500
+A (Trenton same-station),7,REPORT,2026,48.9031,34.8346,0.4434,109,109,7,7,38,0.0500
+D-same (Philadelphia same-station),1 (p06x4),TRAIN,2004,50.5676,31.1678,0.5373,96,96,8,8,34,0.0500
+D-same (Philadelphia same-station),1 (p06x4),TRAIN,2005,51.5317,28.4177,0.5098,102,102,9,9,31,0.0500
+D-same (Philadelphia same-station),1 (p06x4),TRAIN,2006,46.5767,28.4177,0.5393,88,88,5,5,31,0.0500
+D-same (Philadelphia same-station),1 (p06x4),TRAIN,2007,39.6882,28.4177,0.3996,100,100,4,4,31,0.0500
+D-same (Philadelphia same-station),1 (p06x4),TRAIN,2008,42.6831,21.0841,0.4205,101,101,4,4,23,0.0500
+D-same (Philadelphia same-station),1 (p06x4),TRAIN,2009,56.2994,38.5014,0.5300,108,108,7,7,42,0.0500
+D-same (Philadelphia same-station),1 (p06x4),TRAIN,2010,41.4089,21.0841,0.4210,98,98,6,6,23,0.0500
+D-same (Philadelphia same-station),1 (p06x4),TRAIN,2011,34.4596,17.4173,0.3972,86,86,1,1,19,0.0500
+D-same (Philadelphia same-station),1 (p06x4),TRAIN,2012,46.6848,22.0008,0.4747,98,98,5,5,24,0.0500
+D-same (Philadelphia same-station),1 (p06x4),TRAIN,2013,52.2818,31.1678,0.5316,100,100,14,14,34,0.0500
+D-same (Philadelphia same-station),1 (p06x4),TRAIN,2014,45.3092,29.3344,0.4543,101,101,5,5,32,0.0500
+D-same (Philadelphia same-station),1 (p06x4),TRAIN,2015,55.1076,29.3344,0.5099,109,109,3,3,32,0.0500
+D-same (Philadelphia same-station),1 (p06x4),TRAIN,2016,48.1674,23.8342,0.4870,99,99,2,2,26,0.0500
+D-same (Philadelphia same-station),1 (p06x4),REPORT,2017,50.0152,33.9179,0.5102,100,100,6,6,37,0.0500
+D-same (Philadelphia same-station),1 (p06x4),REPORT,2018,54.9679,36.6680,0.5547,102,102,5,5,40,0.0500
+D-same (Philadelphia same-station),1 (p06x4),REPORT,2019,51.5778,38.5014,0.5199,102,102,4,4,42,0.0500
+D-same (Philadelphia same-station),1 (p06x4),REPORT,2020,57.5876,31.1678,0.5406,108,108,8,8,34,0.0500
+D-same (Philadelphia same-station),1 (p06x4),REPORT,2021,54.3811,33.9179,0.5555,100,100,5,5,37,0.0500
+D-same (Philadelphia same-station),1 (p06x4),REPORT,2022,44.5883,29.3344,0.4476,101,101,3,3,32,0.0500
+D-same (Philadelphia same-station),1 (p06x4),REPORT,2023,45.1367,31.1678,0.4509,102,102,6,6,34,0.0500
+D-same (Philadelphia same-station),1 (p06x4),REPORT,2024,48.1333,28.4177,0.4788,102,102,4,4,31,0.0500
+D-same (Philadelphia same-station),1 (p06x4),REPORT,2025,48.8927,33.0012,0.5117,98,98,6,6,36,0.0500
+D-same (Philadelphia same-station),1 (p06x4),REPORT,2026,50.7486,32.0845,0.4850,107,107,8,8,35,0.0500
+D-same (Philadelphia same-station),1.5,TRAIN,2004,51.9876,31.1678,0.5505,96,96,8,8,34,0.0500
+D-same (Philadelphia same-station),1.5,TRAIN,2005,50.5366,28.4177,0.4973,102,102,9,9,31,0.0500
+D-same (Philadelphia same-station),1.5,TRAIN,2006,45.2617,28.4177,0.5230,88,88,5,5,31,0.0500
+D-same (Philadelphia same-station),1.5,TRAIN,2007,39.0949,28.4177,0.3920,100,100,4,4,31,0.0500
+D-same (Philadelphia same-station),1.5,TRAIN,2008,42.1164,21.0841,0.4139,101,101,4,4,23,0.0500
+D-same (Philadelphia same-station),1.5,TRAIN,2009,55.1677,38.5014,0.5174,108,108,7,7,42,0.0500
+D-same (Philadelphia same-station),1.5,TRAIN,2010,40.5914,21.0841,0.4114,98,98,6,6,23,0.0500
+D-same (Philadelphia same-station),1.5,TRAIN,2011,33.8121,17.4173,0.3883,86,86,1,1,19,0.0500
+D-same (Philadelphia same-station),1.5,TRAIN,2012,45.9505,22.0008,0.4654,98,98,5,5,24,0.0500
+D-same (Philadelphia same-station),1.5,TRAIN,2013,53.7510,31.1678,0.5458,100,100,14,14,34,0.0500
+D-same (Philadelphia same-station),1.5,TRAIN,2014,44.1833,29.3344,0.4407,101,101,5,5,32,0.0500
+D-same (Philadelphia same-station),1.5,TRAIN,2015,52.6042,29.3344,0.4853,109,109,3,3,32,0.0500
+D-same (Philadelphia same-station),1.5,TRAIN,2016,46.0398,23.8342,0.4638,99,99,2,2,26,0.0500
+D-same (Philadelphia same-station),1.5,REPORT,2017,49.8052,33.9179,0.5073,100,100,6,6,37,0.0500
+D-same (Philadelphia same-station),1.5,REPORT,2018,53.1628,36.6680,0.5352,102,102,5,5,40,0.0500
+D-same (Philadelphia same-station),1.5,REPORT,2019,53.2603,38.5014,0.5343,102,102,4,4,42,0.0500
+D-same (Philadelphia same-station),1.5,REPORT,2020,57.1717,31.1678,0.5345,108,108,8,8,34,0.0500
+D-same (Philadelphia same-station),1.5,REPORT,2021,53.6293,33.9179,0.5455,100,100,5,5,37,0.0500
+D-same (Philadelphia same-station),1.5,REPORT,2022,44.6007,29.3344,0.4448,101,101,3,3,32,0.0500
+D-same (Philadelphia same-station),1.5,REPORT,2023,45.3784,31.1678,0.4514,102,102,6,6,34,0.0500
+D-same (Philadelphia same-station),1.5,REPORT,2024,47.7041,28.4177,0.4723,102,102,4,4,31,0.0500
+D-same (Philadelphia same-station),1.5,REPORT,2025,47.6960,33.0012,0.4980,98,98,6,6,36,0.0500
+D-same (Philadelphia same-station),1.5,REPORT,2026,53.0535,32.0845,0.5039,107,107,8,8,35,0.0500
+D-same (Philadelphia same-station),2,TRAIN,2004,52.1092,31.1678,0.5493,96,96,8,8,34,0.0500
+D-same (Philadelphia same-station),2,TRAIN,2005,49.3090,28.4177,0.4834,102,102,9,9,31,0.0500
+D-same (Philadelphia same-station),2,TRAIN,2006,47.8892,28.4177,0.5525,88,88,5,5,31,0.0500
+D-same (Philadelphia same-station),2,TRAIN,2007,39.0340,28.4177,0.3887,100,100,4,4,31,0.0500
+D-same (Philadelphia same-station),2,TRAIN,2008,41.3297,21.0841,0.4046,101,101,4,4,23,0.0500
+D-same (Philadelphia same-station),2,TRAIN,2009,56.8810,38.5014,0.5329,108,108,7,7,42,0.0500
+D-same (Philadelphia same-station),2,TRAIN,2010,39.5097,21.0841,0.3987,98,98,6,6,23,0.0500
+D-same (Philadelphia same-station),2,TRAIN,2011,34.0787,17.4173,0.3908,86,86,1,1,19,0.0500
+D-same (Philadelphia same-station),2,TRAIN,2012,47.8747,22.0008,0.4846,98,98,5,5,24,0.0500
+D-same (Philadelphia same-station),2,TRAIN,2013,53.4393,31.1678,0.5416,100,100,14,14,34,0.0500
+D-same (Philadelphia same-station),2,TRAIN,2014,46.2642,29.3344,0.4618,101,101,5,5,32,0.0500
+D-same (Philadelphia same-station),2,TRAIN,2015,54.0383,29.3344,0.4972,109,109,3,3,32,0.0500
+D-same (Philadelphia same-station),2,TRAIN,2016,48.9532,23.8342,0.4935,99,99,2,2,26,0.0500
+D-same (Philadelphia same-station),2,REPORT,2017,49.2643,33.9179,0.5004,100,100,6,6,37,0.0500
+D-same (Philadelphia same-station),2,REPORT,2018,53.1253,36.6680,0.5341,102,102,5,5,40,0.0500
+D-same (Philadelphia same-station),2,REPORT,2019,52.7194,38.5014,0.5275,102,102,4,4,42,0.0500
+D-same (Philadelphia same-station),2,REPORT,2020,56.8984,31.1678,0.5314,108,108,8,8,34,0.0500
+D-same (Philadelphia same-station),2,REPORT,2021,53.1651,33.9179,0.5395,100,100,5,5,37,0.0500
+D-same (Philadelphia same-station),2,REPORT,2022,44.1257,29.3344,0.4400,101,101,3,3,32,0.0500
+D-same (Philadelphia same-station),2,REPORT,2023,46.4392,31.1678,0.4612,102,102,6,6,34,0.0500
+D-same (Philadelphia same-station),2,REPORT,2024,48.5341,28.4177,0.4805,102,102,4,4,31,0.0500
+D-same (Philadelphia same-station),2,REPORT,2025,46.4834,33.0012,0.4840,98,98,6,6,36,0.0500
+D-same (Philadelphia same-station),2,REPORT,2026,53.8710,32.0845,0.5124,107,107,8,8,35,0.0500
+D-same (Philadelphia same-station),3,TRAIN,2004,51.3642,31.1678,0.5391,96,96,8,8,34,0.0500
+D-same (Philadelphia same-station),3,TRAIN,2005,51.6499,28.4177,0.5060,102,102,9,9,31,0.0500
+D-same (Philadelphia same-station),3,TRAIN,2006,48.5800,28.4177,0.5584,88,88,5,5,31,0.0500
+D-same (Philadelphia same-station),3,TRAIN,2007,43.2448,28.4177,0.4317,100,100,4,4,31,0.0500
+D-same (Philadelphia same-station),3,TRAIN,2008,45.0905,21.0841,0.4417,101,101,4,4,23,0.0500
+D-same (Philadelphia same-station),3,TRAIN,2009,58.4393,38.5014,0.5446,108,108,7,7,42,0.0500
+D-same (Philadelphia same-station),3,TRAIN,2010,44.6188,21.0841,0.4499,98,98,6,6,23,0.0500
+D-same (Philadelphia same-station),3,TRAIN,2011,37.0787,17.4173,0.4242,86,86,1,1,19,0.0500
+D-same (Philadelphia same-station),3,TRAIN,2012,50.3747,22.0008,0.5097,98,98,5,5,24,0.0500
+D-same (Philadelphia same-station),3,TRAIN,2013,54.9101,31.1678,0.5547,100,100,14,14,34,0.0500
+D-same (Philadelphia same-station),3,TRAIN,2014,50.0716,29.3344,0.4982,101,101,5,5,32,0.0500
+D-same (Philadelphia same-station),3,TRAIN,2015,52.8266,29.3344,0.4845,109,109,3,3,32,0.0500
+D-same (Philadelphia same-station),3,TRAIN,2016,47.1781,23.8342,0.4730,99,99,2,2,26,0.0500
+D-same (Philadelphia same-station),3,REPORT,2017,48.3892,33.9179,0.4894,100,100,6,6,37,0.0500
+D-same (Philadelphia same-station),3,REPORT,2018,52.4261,36.6680,0.5249,102,102,5,5,40,0.0500
+D-same (Philadelphia same-station),3,REPORT,2019,50.6126,38.5014,0.5036,102,102,4,4,42,0.0500
+D-same (Philadelphia same-station),3,REPORT,2020,58.0167,31.1678,0.5397,108,108,8,8,34,0.0500
+D-same (Philadelphia same-station),3,REPORT,2021,52.0834,33.9179,0.5257,100,100,5,5,37,0.0500
+D-same (Philadelphia same-station),3,REPORT,2022,46.2074,29.3344,0.4597,101,101,3,3,32,0.0500
+D-same (Philadelphia same-station),3,REPORT,2023,48.2375,31.1678,0.4765,102,102,6,6,34,0.0500
+D-same (Philadelphia same-station),3,REPORT,2024,50.2641,28.4177,0.4954,102,102,4,4,31,0.0500
+D-same (Philadelphia same-station),3,REPORT,2025,45.7167,33.0012,0.4722,98,98,6,6,36,0.0500
+D-same (Philadelphia same-station),3,REPORT,2026,52.4884,32.0845,0.4957,107,107,8,8,35,0.0500
+D-same (Philadelphia same-station),4,REPORT,2021,49.3525,33.9179,0.4966,100,100,5,5,37,0.0500
+D-same (Philadelphia same-station),4,REPORT,2022,43.2465,29.3344,0.4263,101,101,3,3,32,0.0500
+D-same (Philadelphia same-station),4,REPORT,2023,46.3266,31.1678,0.4555,102,102,6,6,34,0.0500
+D-same (Philadelphia same-station),4,REPORT,2024,47.7024,28.4177,0.4687,102,102,4,4,31,0.0500
+D-same (Philadelphia same-station),4,REPORT,2025,42.2932,33.0012,0.4341,98,98,6,6,36,0.0500
+D-same (Philadelphia same-station),4,REPORT,2026,48.7492,32.0845,0.4583,107,107,8,8,35,0.0500
+D-same (Philadelphia same-station),5,REPORT,2021,49.5116,33.9179,0.4952,100,100,5,5,37,0.0500
+D-same (Philadelphia same-station),5,REPORT,2022,43.9823,29.3344,0.4313,101,101,3,3,32,0.0500
+D-same (Philadelphia same-station),5,REPORT,2023,46.5865,31.1678,0.4550,102,102,6,6,34,0.0500
+D-same (Philadelphia same-station),5,REPORT,2024,48.1715,28.4177,0.4696,102,102,4,4,31,0.0500
+D-same (Philadelphia same-station),5,REPORT,2025,43.5232,33.0012,0.4428,98,98,6,6,36,0.0500
+D-same (Philadelphia same-station),5,REPORT,2026,48.5624,32.0845,0.4517,107,107,8,8,35,0.0500
+D-same (Philadelphia same-station),6,REPORT,2021,50.2466,33.9179,0.5016,100,100,5,5,37,0.0500
+D-same (Philadelphia same-station),6,REPORT,2022,45.8589,29.3344,0.4490,101,101,3,3,32,0.0500
+D-same (Philadelphia same-station),6,REPORT,2023,46.5406,31.1678,0.4515,102,102,6,6,34,0.0500
+D-same (Philadelphia same-station),6,REPORT,2024,49.9940,28.4177,0.4863,102,102,4,4,31,0.0500
+D-same (Philadelphia same-station),6,REPORT,2025,44.3582,33.0012,0.4502,98,98,6,6,36,0.0500
+D-same (Philadelphia same-station),6,REPORT,2026,49.6823,32.0845,0.4601,107,107,8,8,35,0.0500
+D-same (Philadelphia same-station),7,REPORT,2021,48.5657,33.9179,0.4833,100,100,5,5,37,0.0500
+D-same (Philadelphia same-station),7,REPORT,2022,43.8497,29.3344,0.4280,101,101,3,3,32,0.0500
+D-same (Philadelphia same-station),7,REPORT,2023,44.8048,31.1678,0.4339,102,102,6,6,34,0.0500
+D-same (Philadelphia same-station),7,REPORT,2024,47.0489,28.4177,0.4558,102,102,4,4,31,0.0500
+D-same (Philadelphia same-station),7,REPORT,2025,44.7006,33.0012,0.4527,98,98,6,6,36,0.0500
+D-same (Philadelphia same-station),7,REPORT,2026,47.5231,32.0845,0.4381,107,107,8,8,35,0.0500

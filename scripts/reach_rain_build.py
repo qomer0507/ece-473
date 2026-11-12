@@ -96,6 +96,7 @@ if __name__ == "__main__":
         sc = rd.season_counts(daily)
         sc.insert(0, "station", sid)
         sc["source"] = sc["season"].map(daily.groupby("season")["source"].first())
+        sc["open_hours_rain_in"] = sc["season"].map(daily.groupby("season")["open_hours_rain_in"].sum(min_count=1)).round(2)
         counts.append(sc)
         usable = sc[sc["season_usable"]]
         n_us = int(len(usable))
@@ -105,6 +106,7 @@ if __name__ == "__main__":
                     n_usable_isd=int((usable["source"] == "NCEI_ISD").sum()),
                     n_usable_iem=int((usable["source"] == "IEM_METAR").sum()),
                     mean_loss_days=round(float(usable["loss_days"].mean()), 2) if n_us else None,
+                    n_usable_zero_rain=int((usable["open_hours_rain_in"].fillna(0) <= 0).sum()),
                     kept=n_us >= MIN_SEASONS, why_not_kept="" if n_us >= MIN_SEASONS else f"usable_seasons<{MIN_SEASONS}")
         rows.append(info)
         log(f"{sid}: usable {n_us} ({info['first_usable']}-{info['last_usable']}), kept={info['kept']}")
