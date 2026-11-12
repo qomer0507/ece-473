@@ -1,7 +1,7 @@
 {
  "label": "SIMULATED. LMSR cost rule only. No real orders, no live chain.",
  "script": "python -m sim.experiment",
- "written_utc": "2026-11-12 04:04",
+ "written_utc": "2026-11-12 04:09",
  "distribution": "OBSERVED",
  "distribution_description": "observed loss-day counts, 16 usable training seasons 1999-2014 from data/processed/rain/season_counts_TTN.csv, bucket frequencies with add-0.5 smoothing",
  "train_seasons": [

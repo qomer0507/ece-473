@@ -2,7 +2,7 @@
   "name": "bracket-lmsr",
   "version": "1.0.0",
   "private": true,
-  "description": "ECE 473 Part 3: on-chain LMSR bracket market (testnet only)",
+  "description": "ECE 473: on-chain LMSR markets, rain-count (RainCountLMSR) and the earlier temperature version (testnet only)",
   "scripts": {
     "compile": "node scripts/compile.js",
     "test": "node scripts/compile.js && hardhat test --no-compile"
