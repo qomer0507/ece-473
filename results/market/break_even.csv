@@ -1,0 +1,4 @@
+label,distribution,deductible_d,expected_payout_per_unit_size,informed_loss_per_b_KL,self_financing_b_per_size,self_financing_price_per_1,b_per_size_for_registered_premium,fee_on_hedger_at_registered_premium,price_with_fee_at_registered_premium
+SIMULATED,OBSERVED,2,3.54386,0.0267873,14.0448,1.10616,7.75704,0,1.2
+SIMULATED,OBSERVED,3,2.7807,0.0267873,13.0631,1.12584,8.51998,0,1.2
+SIMULATED,OBSERVED,4,2.07895,0.0267873,12.0274,1.15497,9.52993,0,1.2

@@ -412,6 +412,84 @@ def read_season_counts(path: str, years: Optional[Iterable[int]] = None, calenda
     return sorted(out, key=lambda r: r["season"])
 
 
+# ----------------------------------------------------------------------
+# Registered product (docs/PHASE2_PREREG.md, strategy 3)
+# ----------------------------------------------------------------------
+# Edges: the 1/6 .. 5/6 quantiles of the TRAIN-season counts, as whole numbers.
+# Holding: h_j = max(m_j - d, 0), m_j = TRAIN mean count in bucket j, d = deductible.
+# Probabilities: q_j = (n_j + 0.5) / (N + 3)  (add-half smoothing).
+
+# The edges this rule gives for Trenton, TRAIN 1999-2014 (results/market/registered_buckets.csv).
+# Kept as a constant so the contract tests and the guide can be checked against it;
+# tests/test_lmsr_rain_experiment.py recomputes it from the data file.
+REGISTERED_EDGES_TTN: List[int] = [2, 4, 5, 6, 8]
+
+
+def quantile_inverted_cdf(sorted_counts: Sequence[int], level: float) -> int:
+    """Smallest observed count x with (share of seasons <= x) >= level. Always a whole number."""
+    n = len(sorted_counts)
+    k = max(1, math.ceil(level * n - 1e-12))
+    return int(sorted_counts[k - 1])
+
+
+def quantile_linear(sorted_counts: Sequence[int], level: float) -> float:
+    """Linear-interpolation quantile (the numpy default), for comparison only."""
+    pos = (len(sorted_counts) - 1) * level
+    lo = int(math.floor(pos))
+    hi = min(lo + 1, len(sorted_counts) - 1)
+    return sorted_counts[lo] + (pos - lo) * (sorted_counts[hi] - sorted_counts[lo])
+
+
+def registered_edges(counts: Iterable[int], n: int = N_COUNT_BUCKETS) -> dict:
+    """Bucket edges by the pre-registered rule.
+
+    Edge k is the k/n quantile of the counts (inverted empirical CDF, so it is an
+    observed whole number). If two quantiles tie, the later edge is moved up to the
+    next whole number ("merge ties upward, else nearest valid edges"); `adjusted`
+    lists every edge that was moved, so the caller can record it."""
+    c = sorted(int(x) for x in counts)
+    if not c:
+        raise ValueError("no counts")
+    levels = [k / n for k in range(1, n)]
+    raw = [quantile_inverted_cdf(c, lv) for lv in levels]
+    edges, adjusted = [], []
+    for k, e in enumerate(raw):
+        if edges and e <= edges[-1]:
+            adjusted.append({"edge_index": k, "quantile": e, "used": edges[-1] + 1})
+            e = edges[-1] + 1
+        edges.append(e)
+    return {"levels": levels, "quantiles_inverted_cdf": raw,
+            "quantiles_linear": [quantile_linear(c, lv) for lv in levels],
+            "edges": edges, "adjusted": adjusted, "sorted_counts": c}
+
+
+def bucket_means(counts: Iterable[int], edges: Sequence[int]) -> dict:
+    """m_j: mean TRAIN count in each bucket. Empty bucket: its midpoint; empty top bucket: last edge + 2."""
+    members: List[List[int]] = [[] for _ in range(len(edges) + 1)]
+    for x in counts:
+        members[count_bucket_of(int(x), edges)].append(int(x))
+    means, source = [], []
+    lo = 0
+    for j, mem in enumerate(members):
+        if mem:
+            means.append(math.fsum(mem) / len(mem))
+            source.append("train mean")
+        elif j < len(edges):
+            means.append((lo + edges[j]) / 2.0)
+            source.append("bucket midpoint (no train season)")
+        else:
+            means.append(edges[-1] + 2.0)
+            source.append("last edge + 2 (no train season)")
+        if j < len(edges):
+            lo = edges[j] + 1
+    return {"means": means, "source": source, "members": members, "tally": [len(m) for m in members]}
+
+
+def registered_holdings(means: Sequence[float], deductible: float) -> List[float]:
+    """h_j = max(m_j - d, 0): payout units held of bucket j, per 1 unit of hedge size."""
+    return [max(m - deductible, 0.0) for m in means]
+
+
 class CountMarket:
     """Simulated six-bucket count market with the contract's accounting (float units).
 

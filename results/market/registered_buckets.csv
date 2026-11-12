@@ -1,0 +1,7 @@
+bucket,loss_days,lowest_count,upper_edge,quantile_level,quantile_inverted_cdf,quantile_linear_interpolation,n_train_seasons,train_counts_in_bucket,m_j,m_j_source,q_j,h_j_d2,h_j_d3,h_j_d4,distribution,train_counts_sorted,ties
+0,0-2,0,2,1/6,2,2,4,1 2 2 2,1.75,train mean,0.236842,0,0,0,OBSERVED,1 2 2 2 3 4 4 5 5 6 6 6 8 8 12 12,"no ties: five distinct quantiles, six distinct buckets, nothing merged or moved"
+1,3-4,3,4,2/6,4,4,3,3 4 4,3.66667,train mean,0.184211,1.66667,0.666667,0,OBSERVED,1 2 2 2 3 4 4 5 5 6 6 6 8 8 12 12,"no ties: five distinct quantiles, six distinct buckets, nothing merged or moved"
+2,5,5,5,3/6,5,5,2,5 5,5,train mean,0.131579,3,2,1,OBSERVED,1 2 2 2 3 4 4 5 5 6 6 6 8 8 12 12,"no ties: five distinct quantiles, six distinct buckets, nothing merged or moved"
+3,6,6,6,4/6,6,6,3,6 6 6,6,train mean,0.184211,4,3,2,OBSERVED,1 2 2 2 3 4 4 5 5 6 6 6 8 8 12 12,"no ties: five distinct quantiles, six distinct buckets, nothing merged or moved"
+4,7-8,7,8,5/6,8,8,2,8 8,8,train mean,0.131579,6,5,4,OBSERVED,1 2 2 2 3 4 4 5 5 6 6 6 8 8 12 12,"no ties: five distinct quantiles, six distinct buckets, nothing merged or moved"
+5,9+,9,,,,,2,12 12,12,train mean,0.131579,10,9,8,OBSERVED,1 2 2 2 3 4 4 5 5 6 6 6 8 8 12 12,"no ties: five distinct quantiles, six distinct buckets, nothing merged or moved"

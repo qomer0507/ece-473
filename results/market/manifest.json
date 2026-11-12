@@ -1,9 +1,9 @@
 {
- "label": "SIMULATED. LMSR cost rule only. No real orders, no live chain.",
+ "label": "SIMULATED. LMSR cost rule only. No real orders, no live chain. The fee is hypothetical.",
  "script": "python -m sim.experiment",
- "written_utc": "2026-11-12 04:09",
+ "written_utc": "2026-11-12 04:35",
  "distribution": "OBSERVED",
- "distribution_description": "observed loss-day counts, 16 usable training seasons 1999-2014 from data/processed/rain/season_counts_TTN.csv, bucket frequencies with add-0.5 smoothing",
+ "distribution_description": "observed loss-day counts, 16 usable TRAIN seasons 1999-2014 from data/processed/rain/season_counts_TTN.csv, bucket frequencies with add-0.5 smoothing",
  "train_seasons": [
   1999,
   2000,
@@ -43,41 +43,102 @@
  "edges": [
   2,
   4,
+  5,
   6,
-  8,
-  10
+  8
  ],
- "edges_are_example": true,
- "bucket_probabilities": [
+ "edges_rule": "registered quantile rule",
+ "ties_adjusted": [],
+ "bucket_means_m_j": [
+  1.75,
+  3.6666666666666665,
+  5.0,
+  6.0,
+  8.0,
+  12.0
+ ],
+ "bucket_probabilities_q_j": [
   0.23684210526315788,
   0.18421052631578946,
-  0.2894736842105263,
   0.13157894736842105,
-  0.02631578947368421,
+  0.18421052631578946,
+  0.13157894736842105,
   0.13157894736842105
  ],
  "alpha": 0.5,
- "stepped_hedge_shares_per_size": [
-  0,
-  0,
-  0,
-  1,
+ "deductibles_run": [
   2,
-  3
+  3,
+  4
  ],
+ "deductible_status": "NOT CHOSEN YET (evaluation workstream chooses d on TRAIN)",
+ "holdings_per_unit_size": {
+  "2": [
+   0.0,
+   1.6666666666666665,
+   3.0,
+   4.0,
+   6.0,
+   10.0
+  ],
+  "3": [
+   0.0,
+   0.6666666666666665,
+   2.0,
+   3.0,
+   5.0,
+   9.0
+  ],
+  "4": [
+   0.0,
+   0.0,
+   1.0,
+   2.0,
+   4.0,
+   8.0
+  ]
+ },
+ "loading": 0.2,
  "b_grid": [
   50,
   200,
   1000,
-  5000
+  5000,
+  20000
  ],
  "sizes": [
   10,
   100,
   1000
  ],
+ "informed_loss_per_b_KL": 0.02678730869408672,
+ "break_even": {
+  "2": {
+   "self_financing_b_per_size": 14.044807812483468,
+   "self_financing_price_per_1": 1.1061618234557455,
+   "b_per_size_for_registered_premium": 7.757038015772135,
+   "fee_on_hedger_at_registered_premium": 0.0,
+   "price_with_fee_at_registered_premium": 1.1999999999999995
+  },
+  "3": {
+   "self_financing_b_per_size": 13.063060732870415,
+   "self_financing_price_per_1": 1.1258402630879325,
+   "b_per_size_for_registered_premium": 8.519979828750156,
+   "fee_on_hedger_at_registered_premium": 0.0,
+   "price_with_fee_at_registered_premium": 1.2000000000000002
+  },
+  "4": {
+   "self_financing_b_per_size": 12.02744891044617,
+   "self_financing_price_per_1": 1.1549740949003326,
+   "b_per_size_for_registered_premium": 9.52993417381834,
+   "fee_on_hedger_at_registered_premium": 0.0,
+   "price_with_fee_at_registered_premium": 1.1999999999999997
+  }
+ },
  "outputs": [
+  "registered_buckets.csv",
   "hedge_pricing.csv",
+  "break_even.csv",
   "distribution.csv",
   "stepped_hedge_price.png",
   "summary.md"

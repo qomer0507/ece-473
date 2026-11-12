@@ -1,7 +1,7 @@
-bucket,distribution,train_seasons_in_bucket,climatology_probability,uniform_start_price,stepped_hedge_shares_per_size
-0-2,OBSERVED,4,0.236842,0.166667,0
-3-4,OBSERVED,3,0.184211,0.166667,0
-5-6,OBSERVED,5,0.289474,0.166667,0
-7-8,OBSERVED,2,0.131579,0.166667,1
-9-10,OBSERVED,0,0.0263158,0.166667,2
-11+,OBSERVED,2,0.131579,0.166667,3
+bucket,distribution,train_seasons_in_bucket,smoothed_train_probability,uniform_start_price,bucket_mean_m_j
+0-2,OBSERVED,4,0.236842,0.166667,1.75
+3-4,OBSERVED,3,0.184211,0.166667,3.66667
+5,OBSERVED,2,0.131579,0.166667,5
+6,OBSERVED,3,0.184211,0.166667,6
+7-8,OBSERVED,2,0.131579,0.166667,8
+9+,OBSERVED,2,0.131579,0.166667,12
