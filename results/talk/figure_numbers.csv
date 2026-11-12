@@ -1,0 +1,71 @@
+figure,name,value,source
+fig1,seasons,28,data/processed/rain/season_counts_TTN.csv
+fig1,mean_kalshi_pay_days,34.54,data/processed/rain/season_counts_TTN.csv
+fig1,mean_loss_days,5.36,data/processed/rain/season_counts_TTN.csv
+fig1,ratio,6.45,data/processed/rain/season_counts_TTN.csv
+fig1,share_pay_days_not_loss,0.845,data/processed/rain/season_counts_TTN.csv
+fig1,share_loss_days_paid,1.0,data/processed/rain/season_counts_TTN.csv
+fig2,two_sided_days_24h,403,data/processed/kalshi_rain/calibration.csv
+fig2,rain_days_in_bins,168.0,data/processed/kalshi_rain/calibration.csv
+fig2,mean_ask_rain_days_from_bins,0.774,data/processed/kalshi_rain/calibration.csv
+fig2,mean_ask_dry_days_from_bins,0.257,data/processed/kalshi_rain/calibration.csv
+fig2,mean_mid_price_24h,0.42,data/processed/kalshi_rain/calibration.csv
+fig2,share_rain_days,0.417,data/processed/kalshi_rain/calibration.csv
+fig2,mean_ask_rain_days_setC,0.7496,data/processed/kalshi_rain/model_eval.csv
+fig2,mean_ask_dry_days_setC,0.2322,data/processed/kalshi_rain/model_eval.csv
+fig2,n_days_setC,209,data/processed/kalshi_rain/model_eval.csv
+fig3,HE_A_strategy2,"-0.682 [-1.260, -0.487]",results/phase2/metrics_tidy.csv
+fig3,HE_A_strategy3,"0.585 [-1.163, 0.833]",results/phase2/metrics_tidy.csv
+fig3,HE_A_strategy4,"0.603 [-0.623, 0.790]",results/phase2/metrics_tidy.csv
+fig3,HE_A_strategy5,"-0.294 [-0.613, -0.178]",results/phase2/metrics_tidy.csv
+fig3,HE_B1_strategy2,"-0.334 [-0.529, -0.274]",results/phase2/metrics_tidy.csv
+fig3,HE_B1_strategy3,"-0.373 [-0.620, -0.284]",results/phase2/metrics_tidy.csv
+fig3,HE_B1_strategy4,"-0.352 [-0.585, -0.269]",results/phase2/metrics_tidy.csv
+fig3,HE_B1_strategy5,"-0.140 [-0.231, -0.087]",results/phase2/metrics_tidy.csv
+fig3,HE_D-same_strategy2,"-0.246 [-0.507, -0.161]",results/phase2/metrics_tidy.csv
+fig3,HE_D-same_strategy3,"0.646 [0.292, 0.781]",results/phase2/metrics_tidy.csv
+fig3,HE_D-same_strategy4,"0.875 [0.531, 0.943]",results/phase2/metrics_tidy.csv
+fig3,HE_D-same_strategy5,"-0.068 [-0.195, -0.010]",results/phase2/metrics_tidy.csv
+fig3,HE_D-PNE_strategy2,"-0.294 [-0.406, -0.236]",results/phase2/metrics_tidy.csv
+fig3,HE_D-PNE_strategy3,"0.647 [0.443, 0.774]",results/phase2/metrics_tidy.csv
+fig3,HE_D-PNE_strategy4,"0.751 [0.521, 0.884]",results/phase2/metrics_tidy.csv
+fig3,HE_D-PNE_strategy5,"-0.106 [-0.186, -0.048]",results/phase2/metrics_tidy.csv
+fig4,HE_strategy3,"0.646 [0.292, 0.781]",results/phase2/metrics_tidy.csv
+fig4,worst10pct_mean_unhedged,10.0,results/phase2/metrics_tidy.csv
+fig4,worst10pct_mean_seasonal,6.83,results/phase2/metrics_tidy.csv
+fig4,worst10pct_mean_kalshi_sized,10.46,results/phase2/metrics_tidy.csv
+fig4,mean_net_cost_unhedged,5.06,results/phase2/metrics_tidy.csv
+fig4,mean_net_cost_kalshi_sized,5.59,results/phase2/metrics_tidy.csv
+fig4,mean_net_cost_seasonal,5.78,results/phase2/metrics_tidy.csv
+fig4,train_reference_level,5.0,results/phase2/train_params.csv
+fig4,premium_strategy3_per_season,2.8347,results/phase2/train_params.csv
+fig4,report_seasons,35,results/phase2/season_net_cost.csv
+fig5,deductible_shown,3,results/market/hedge_pricing.csv
+fig5,b_over_size_where_price_is_1.20_informed,8.52,results/market/break_even.csv
+fig5,price_per_1_uniform_b_over_size_0.05,3.204,results/market/hedge_pricing.csv
+fig5,price_per_1_uniform_b_over_size_0.2,3.108,results/market/hedge_pricing.csv
+fig5,price_per_1_uniform_b_over_size_0.5,2.914,results/market/hedge_pricing.csv
+fig5,price_per_1_uniform_b_over_size_1,2.6,results/market/hedge_pricing.csv
+fig5,price_per_1_uniform_b_over_size_2,2.104,results/market/hedge_pricing.csv
+fig5,price_per_1_uniform_b_over_size_5,1.552,results/market/hedge_pricing.csv
+fig5,price_per_1_uniform_b_over_size_10,1.356,results/market/hedge_pricing.csv
+fig5,price_per_1_uniform_b_over_size_20,1.264,results/market/hedge_pricing.csv
+fig5,price_per_1_uniform_b_over_size_50,1.212,results/market/hedge_pricing.csv
+fig5,price_per_1_uniform_b_over_size_100,1.195,results/market/hedge_pricing.csv
+fig5,price_per_1_uniform_b_over_size_200,1.187,results/market/hedge_pricing.csv
+fig5,price_per_1_uniform_b_over_size_500,1.182,results/market/hedge_pricing.csv
+fig5,price_per_1_uniform_b_over_size_2000,1.18,results/market/hedge_pricing.csv
+fig5,price_per_1_informed_b_over_size_0.05,3.2,results/market/hedge_pricing.csv
+fig5,price_per_1_informed_b_over_size_0.2,3.091,results/market/hedge_pricing.csv
+fig5,price_per_1_informed_b_over_size_0.5,2.872,results/market/hedge_pricing.csv
+fig5,price_per_1_informed_b_over_size_1,2.515,results/market/hedge_pricing.csv
+fig5,price_per_1_informed_b_over_size_2,1.954,results/market/hedge_pricing.csv
+fig5,price_per_1_informed_b_over_size_5,1.362,results/market/hedge_pricing.csv
+fig5,price_per_1_informed_b_over_size_10,1.168,results/market/hedge_pricing.csv
+fig5,price_per_1_informed_b_over_size_20,1.08,results/market/hedge_pricing.csv
+fig5,price_per_1_informed_b_over_size_50,1.031,results/market/hedge_pricing.csv
+fig5,price_per_1_informed_b_over_size_100,1.015,results/market/hedge_pricing.csv
+fig5,price_per_1_informed_b_over_size_200,1.008,results/market/hedge_pricing.csv
+fig5,price_per_1_informed_b_over_size_500,1.003,results/market/hedge_pricing.csv
+fig5,price_per_1_informed_b_over_size_2000,1.001,results/market/hedge_pricing.csv
+fig8,numbers_agree,300 of 300 (120 registered),replication/results.csv vs results/phase2/metrics_tidy.csv
