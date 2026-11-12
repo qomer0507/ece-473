@@ -1,0 +1,4 @@
+station,usable_seasons_compared,days_compared,share_days_within_0p02,share_wet_flag_agree,hourly_wet_ghcn_dry,hourly_dry_ghcn_wet,hourly_total_in,ghcn_total_in,total_ratio,worst_season_share_within,worst_season,seasons_total_off_by_more_than_5pct
+TTN,28,2577,0.9841,0.9682,69,13,342.44,343.15,0.9979,0.9121,2014,3
+PHL,85,8419,0.9783,0.9937,20,33,1054.58,1054.76,0.9998,0.7059,1941,6
+ABE,70,6701,0.9942,0.996,26,1,904.15,903.56,1.0007,0.9388,2001,0

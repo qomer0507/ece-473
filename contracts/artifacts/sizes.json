@@ -1,6 +1,11 @@
 {
  "compiler": "0.8.26+commit.8a97fa7a.Emscripten.clang",
  "deployedBytes": {
+  "RainCountLMSR": 15884,
+  "SeasonCountOracle": 3532,
+  "MockCountOracle": 1940,
+  "EmptyFallbackOracle": 70,
+  "OneWordOracle": 78,
   "BracketLMSR": 13901,
   "TemperatureOracle": 1918,
   "MockOracle": 1466,

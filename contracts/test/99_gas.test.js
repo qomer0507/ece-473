@@ -20,6 +20,12 @@ describe("99 gas report", function () {
   });
 
   it("reports gas per function", function () {
+    // This legacy report collects gas from test files 01 to 04. Run alone it has nothing to
+    // report, so it is skipped (review finding). The rain-count gas test, 15_rain_gas, is self-contained.
+    if (!gasLog["deploy BracketLMSR (n=12)"]) {
+      console.log("      skipped: run the whole suite (npm test) for the temperature-market gas report");
+      this.skip();
+    }
     const rows = {};
     for (const [label, xs] of Object.entries(gasLog)) {
       const sorted = xs.slice().sort((a, b) => a - b);

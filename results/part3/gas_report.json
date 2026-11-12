@@ -8,6 +8,11 @@
  },
  "brackets": 12,
  "deployedBytes": {
+  "RainCountLMSR": 15884,
+  "SeasonCountOracle": 3532,
+  "MockCountOracle": 1940,
+  "EmptyFallbackOracle": 70,
+  "OneWordOracle": 78,
   "BracketLMSR": 13901,
   "TemperatureOracle": 1918,
   "MockOracle": 1466,
@@ -36,9 +41,9 @@
   },
   "deploy BracketLMSR (n=12, seeded prior)": {
    "calls": 1,
-   "min": 3942385,
-   "median": 3942385,
-   "max": 3942385
+   "min": 3942397,
+   "median": 3942397,
+   "max": 3942397
   },
   "deploy TemperatureOracle": {
    "calls": 6,

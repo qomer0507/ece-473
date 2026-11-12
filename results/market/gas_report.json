@@ -1,0 +1,142 @@
+{
+ "note": "Gas measured in the local Hardhat EVM by contracts/test/15_rain_gas.test.js. Not measured on Sepolia.",
+ "evm": "hardhat network, hardfork cancun",
+ "compiler": "0.8.26+commit.8a97fa7a.Emscripten.clang",
+ "optimizer": {
+  "enabled": true,
+  "runs": 200
+ },
+ "buckets": 6,
+ "deployedBytes": {
+  "RainCountLMSR": 15884,
+  "SeasonCountOracle": 3532
+ },
+ "gas": {
+  "deploy SeasonCountOracle": {
+   "calls": 1,
+   "min": 840559,
+   "median": 840559,
+   "max": 840559
+  },
+  "oracle.openSeason": {
+   "calls": 1,
+   "min": 49167,
+   "median": 49167,
+   "max": 49167
+  },
+  "oracle.setReporter": {
+   "calls": 1,
+   "min": 45727,
+   "median": 45727,
+   "max": 45727
+  },
+  "deploy RainCountLMSR": {
+   "calls": 1,
+   "min": 3776889,
+   "median": 3776889,
+   "max": 3776889
+  },
+  "buy (one bucket, first buy of this buyer)": {
+   "calls": 1,
+   "min": 179507,
+   "median": 179507,
+   "max": 179507
+  },
+  "buy (one bucket, repeat)": {
+   "calls": 2,
+   "min": 111313,
+   "median": 111451,
+   "max": 111451
+  },
+  "buyBasket stepped [0,0,0,1,2,3] x size (first buy of this buyer)": {
+   "calls": 3,
+   "min": 199332,
+   "median": 199924,
+   "max": 233832
+  },
+  "buyBasket stepped [0,0,0,1,2,3] x size (repeat)": {
+   "calls": 3,
+   "min": 117196,
+   "median": 131214,
+   "max": 131436
+  },
+  "buyBasket all six buckets (first buy of this buyer)": {
+   "calls": 1,
+   "min": 314308,
+   "median": 314308,
+   "max": 314308
+  },
+  "buyBasket all six buckets (repeat)": {
+   "calls": 1,
+   "min": 143266,
+   "median": 143266,
+   "max": 143266
+  },
+  "stepped x100 as ONE basket (fresh market)": {
+   "calls": 1,
+   "min": 268264,
+   "median": 268264,
+   "max": 268264
+  },
+  "stepped x100 by THREE single buys (fresh market, sum)": {
+   "calls": 1,
+   "min": 471341,
+   "median": 471341,
+   "max": 471341
+  },
+  "oracle.reportCount": {
+   "calls": 1,
+   "min": 56241,
+   "median": 56241,
+   "max": 56241
+  },
+  "settle": {
+   "calls": 1,
+   "min": 159975,
+   "median": 159975,
+   "max": 159975
+  },
+  "redeem": {
+   "calls": 2,
+   "min": 44585,
+   "median": 44585,
+   "max": 44585
+  },
+  "sponsorWithdraw": {
+   "calls": 2,
+   "min": 36444,
+   "median": 36444,
+   "max": 36444
+  },
+  "sweepUnclaimed": {
+   "calls": 1,
+   "min": 39805,
+   "median": 39805,
+   "max": 39805
+  },
+  "emergencyCancel": {
+   "calls": 1,
+   "min": 95391,
+   "median": 95391,
+   "max": 95391
+  },
+  "claimRefund": {
+   "calls": 2,
+   "min": 39539,
+   "median": 39539,
+   "max": 39539
+  },
+  "cancelAfterDeadline": {
+   "calls": 1,
+   "min": 106570,
+   "median": 106570,
+   "max": 106570
+  },
+  "oracle.voidReport": {
+   "calls": 1,
+   "min": 31012,
+   "median": 31012,
+   "max": 31012
+  }
+ }
+}

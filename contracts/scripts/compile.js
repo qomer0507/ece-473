@@ -6,13 +6,27 @@ const path = require("path");
 const solc = require("solc");
 
 const ROOT = path.join(__dirname, "..");
-const SOURCES = ["BracketLMSR.sol", "TemperatureOracle.sol", "MockOracle.sol", "mocks/TestHelpers.sol"];
+const SOURCES = [
+  "RainCountLMSR.sol", "SeasonCountOracle.sol", "MockCountOracle.sol", "mocks/RainTestHelpers.sol",
+  // earlier temperature version, kept for comparison
+  "BracketLMSR.sol", "TemperatureOracle.sol", "MockOracle.sol", "mocks/TestHelpers.sol",
+];
+// Contracts that get a flattened single-file copy in remix/.
+const FLATTEN = ["RainCountLMSR.sol", "SeasonCountOracle.sol", "BracketLMSR.sol", "TemperatureOracle.sol"];
+// Remix resolves "@openzeppelin/contracts@4.9.6/..." from npm. Locally the same version is in node_modules.
+const OZ_PIN = "@openzeppelin/contracts@4.9.6/";
+const ozVersion = require("@openzeppelin/contracts/package.json").version;
+if (ozVersion !== "4.9.6") {
+  console.error("node_modules has OpenZeppelin " + ozVersion + ", the sources pin 4.9.6");
+  process.exit(1);
+}
 const SETTINGS = {
   optimizer: { enabled: true, runs: 200 },
   outputSelection: { "*": { "*": ["abi", "evm.bytecode.object", "evm.deployedBytecode.object"] } },
 };
 
 function readImport(p) {
+  if (p.startsWith(OZ_PIN)) p = "@openzeppelin/contracts/" + p.slice(OZ_PIN.length);
   for (const base of [ROOT, path.join(ROOT, "node_modules")]) {
     const full = path.join(base, p);
     if (fs.existsSync(full)) return { contents: fs.readFileSync(full, "utf8") };
@@ -88,7 +102,7 @@ function flatten(entry) {
 }
 const remixDir = path.join(ROOT, "remix");
 fs.mkdirSync(remixDir, { recursive: true });
-for (const entry of ["BracketLMSR.sol", "TemperatureOracle.sol"]) {
+for (const entry of FLATTEN) {
   const name = entry.replace(".sol", "");
   const flatName = name + "_flat.sol";
   const flat = flatten(entry);

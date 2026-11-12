@@ -1,0 +1,165 @@
+{
+ "label": "MODELLED price parameters, fitted on observed Kalshi asks 24 hours before close",
+ "recommended": "skill",
+ "formula": {
+  "clim": "ask = clamp(p + a)",
+  "persist": "ask = clamp(p + k*(rain_yesterday - p) + a)",
+  "skill": "ask = clamp(p + s*(rain_today - p) + a)",
+  "clamp": "round to cent, keep in [0.01, 0.99]",
+  "fee": "round_up_to_cent(0.07 * C * ask * (1 - ask)) per order"
+ },
+ "p": "climatological share of days with a Yes outcome in that calendar month at the station (caller supplies it from training seasons)",
+ "fit_sample": "days of 2025-2026 with a fresh quote 24 h before close and ask < 1.00 (a contract could be bought)",
+ "fit_days": 381,
+ "fit_sets": {
+  "A: NYC 2025": 104,
+  "B: NYC 2026 to Jul 15": 68,
+  "C: four cities Jul 15-Sep 30 2026": 209
+ },
+ "no_offer_days": {
+  "A: NYC 2025": {
+   "priced_days": 131,
+   "ask_1.00_days": 27,
+   "ask_1.00_days_that_rained": 24,
+   "rain_days": 65,
+   "u_share_of_rain_days_with_no_offer": 0.3692
+  },
+  "B: NYC 2026 to Jul 15": {
+   "priced_days": 76,
+   "ask_1.00_days": 8,
+   "ask_1.00_days_that_rained": 8,
+   "rain_days": 39,
+   "u_share_of_rain_days_with_no_offer": 0.2051
+  },
+  "C: four cities Jul 15-Sep 30 2026": {
+   "priced_days": 216,
+   "ask_1.00_days": 7,
+   "ask_1.00_days_that_rained": 7,
+   "rain_days": 84,
+   "u_share_of_rain_days_with_no_offer": 0.0833
+  }
+ },
+ "u_note": "u = share of rain days on which the ask was 1.00 with a positive bid (no seller). Default u is set C, the current KXRAIN series; all of 2026 gives 0.122; the thin 2025 market was much worse.",
+ "models": {
+  "clim": {
+   "a": 0.102,
+   "resid_sd": 0.3496,
+   "u": 0.0833
+  },
+  "persist": {
+   "a": 0.0922,
+   "resid_sd": 0.3433,
+   "k": 0.2063,
+   "u": 0.0833
+  },
+  "skill": {
+   "a": 0.0851,
+   "s": 0.5037,
+   "resid_sd": 0.2491,
+   "u": 0.0833
+  }
+ },
+ "param_se_bootstrap_by_date": {
+  "clim": {
+   "a": 0.0252
+  },
+  "persist": {
+   "a": 0.0241
+  },
+  "skill": {
+   "a": 0.0154,
+   "s": 0.031
+  }
+ },
+ "a_net_matched": {
+  "skill": 0.0684,
+  "note": "mean(observed ask - result) on the fit days; use as a in a sensitivity run (keeps s)"
+ },
+ "models_fitted_on_each_set_alone": {
+  "A: NYC 2025": {
+   "clim": {
+    "a": 0.1149
+   },
+   "persist": {
+    "a": 0.1111
+   },
+   "skill": {
+    "a": 0.1194,
+    "s": 0.4827
+   }
+  },
+  "B: NYC 2026 to Jul 15": {
+   "clim": {
+    "a": 0.0294
+   },
+   "persist": {
+    "a": 0.023
+   },
+   "skill": {
+    "a": 0.0278,
+    "s": 0.511
+   }
+  },
+  "C: four cities Jul 15-Sep 30 2026": {
+   "clim": {
+    "a": 0.1193
+   },
+   "persist": {
+    "a": 0.1052
+   },
+   "skill": {
+    "a": 0.086,
+    "s": 0.5125
+   }
+  },
+  "Philadelphia+Trenton+Newark 2026": {
+   "clim": {
+    "a": 0.1092
+   },
+   "persist": {
+    "a": 0.0983
+   },
+   "skill": {
+    "a": 0.0913,
+    "s": 0.5146
+   }
+  }
+ },
+ "sensitivity_models_fitted_on_priced_days_incl_ask_1.00": {
+  "clim": {
+   "a": 0.1496
+  },
+  "persist": {
+   "a": 0.135
+  },
+  "skill": {
+   "a": 0.1065,
+   "s": 0.533
+  }
+ },
+ "models_fitted_without_held_out_set_C": {
+  "clim": {
+   "a": 0.0811
+  },
+  "persist": {
+   "a": 0.0763
+  },
+  "skill": {
+   "a": 0.0832,
+   "s": 0.4931
+  }
+ },
+ "persistence_k_by_city_rule": {
+  "TTN|trace_no": 0.2063,
+  "TTN|trace_yes": 0.2196,
+  "PHIL|trace_no": 0.1849,
+  "PHIL|trace_yes": 0.2101,
+  "EWR|trace_no": 0.1956,
+  "EWR|trace_yes": 0.211,
+  "NYC|trace_no": 0.1626,
+  "NYC|trace_yes": 0.1962
+ },
+ "persistence_k_note": "P(rain | rain yesterday) - P(rain | dry yesterday), May-Sep 1998-2024, station data. For 'persist' pass k for the station; default below is Trenton, trace = No.",
+ "climatology_used_for_fit": "data/processed/kalshi_rain/climatology.csv (GHCN-Daily 1998-2024, by month)",
+ "decision_time": "24 hours before close"
+}

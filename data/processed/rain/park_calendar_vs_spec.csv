@@ -1,0 +1,9 @@
+park_id,season,spec_first_day,spec_last_day,spec_season_days,days_read,days_not_read,open_days,closed_days,share_of_read_days_open,closed_dates,months_not_read,usual_open_time,usual_close_time,earliest_close,latest_close,open_days_opening_by_10,open_days_opening_after_10,open_days_closing_before_18,open_days_closing_at_18,open_days_closing_after_18,mean_open_hours_per_day,share_of_open_hours_inside_10_18,weekend_holiday_days_read,weekend_holiday_days_open
+dorney_park,2024,2024-05-24,2024-09-02,102,102,0,98,4,0.961,2024-08-26; 2024-08-27; 2024-08-28; 2024-08-29,,10:30,21:00,18:00,23:00,21.0,77.0,0.0,7.0,91.0,10.15,0.733,33.0,33.0
+dorney_park,2025,2025-05-23,2025-09-01,102,102,0,95,7,0.931,2025-05-28; 2025-06-04; 2025-06-11; 2025-08-25; 2025-08-26; 2025-08-27; 2025-08-28,,11:00,21:00,18:00,22:00,25.0,70.0,0.0,5.0,90.0,10.08,0.728,33.0,33.0
+great_adventure,2026,2026-05-22,2026-09-07,109,109,0,109,0,1.0,,,10:30,20:00,19:00,22:00,0.0,109.0,0.0,0.0,109.0,9.91,0.757,34.0,34.0
+sesame_place,2022,2022-05-27,2022-09-05,102,97,5,97,0,1.0,,05 (partial),10:00,20:00,15:00,21:00,97.0,0.0,18.0,18.0,61.0,9.04,0.863,30.0,30.0
+sesame_place,2023,2023-05-26,2023-09-04,102,98,4,98,0,1.0,,09 (unreadable),10:00,19:00,16:00,21:00,97.0,1.0,22.0,14.0,62.0,8.66,0.893,30.0,30.0
+sesame_place,2024,2024-05-24,2024-09-02,102,71,31,71,0,1.0,,07 (blocked),10:00,17:00,17:00,21:00,71.0,0.0,25.0,14.0,32.0,8.42,0.909,24.0,24.0
+sesame_place,2025,2025-05-23,2025-09-01,102,32,70,32,0,1.0,,"05 (blocked), 06 (blocked), 07 (blocked)",10:00,19:00,17:00,20:30,32.0,0.0,5.0,5.0,22.0,8.94,0.878,11.0,11.0
+sesame_place,2026,2026-05-22,2026-09-07,109,0,109,0,0,,,"05 (blocked), 06 (blocked), 07 (blocked), 08 (blocked), 09 (blocked)",,,,,,,,,,,,,

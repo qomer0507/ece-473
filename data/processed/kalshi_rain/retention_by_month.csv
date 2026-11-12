@@ -1,0 +1,9 @@
+label,prices,city_months,days,slope_net_on_excess_rain_days,correlation,sd_monthly_net,sample
+observed,observed asks,18,381,0.334,0.446,1.46,main: buyable days
+modelled,"modelled, clim",18,381,0.921,0.889,2.019,main: buyable days
+modelled,"modelled, persist",18,381,0.794,0.859,1.802,main: buyable days
+modelled,"modelled, skill",18,381,0.432,0.738,1.142,main: buyable days
+observed,observed asks,18,423,0.1,0.138,1.72,sensitivity: priced days
+modelled,"modelled, clim",18,423,0.844,0.834,2.421,sensitivity: priced days
+modelled,"modelled, persist",18,423,0.698,0.798,2.092,sensitivity: priced days
+modelled,"modelled, skill",18,423,0.361,0.668,1.295,sensitivity: priced days

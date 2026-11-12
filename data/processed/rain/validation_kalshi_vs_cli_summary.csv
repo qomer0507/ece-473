@@ -1,0 +1,16 @@
+station,day_set,days,agree,share_agree,hourly_yes_cli_no,hourly_no_cli_yes,cli_yes_days,hourly_yes_days,cli_trace_days,cli_missing_days
+TTN,all season days with a CLI row,2578,2492,0.9666,59,27,922,954,246,0
+TTN,usable days (opening hours complete),2466,2392,0.97,58,16,870,912,236,0
+TTN,climate day complete (24 hours),2320,2262,0.975,52,6,801,847,226,0
+TTN,climate day incomplete,258,230,0.8915,7,21,121,107,20,0
+TTN,usable days in usable seasons,2466,2392,0.97,58,16,870,912,236,0
+PHL,all season days with a CLI row,2578,2563,0.9942,3,12,858,849,304,0
+PHL,usable days (opening hours complete),2503,2491,0.9952,3,9,816,810,297,0
+PHL,climate day complete (24 hours),2419,2409,0.9959,3,7,776,772,285,0
+PHL,climate day incomplete,159,154,0.9686,0,5,82,77,19,0
+PHL,usable days in usable seasons,2503,2491,0.9952,3,9,816,810,297,0
+ABE,all season days with a CLI row,2578,2557,0.9919,11,10,934,935,302,1
+ABE,usable days (opening hours complete),2494,2480,0.9944,10,4,888,894,293,0
+ABE,climate day complete (24 hours),2369,2358,0.9954,10,1,822,831,285,0
+ABE,climate day incomplete,209,199,0.9522,1,9,112,104,17,1
+ABE,usable days in usable seasons,2494,2480,0.9944,10,4,888,894,293,0

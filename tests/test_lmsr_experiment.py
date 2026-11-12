@@ -1,11 +1,12 @@
-"""Tests of the Part 3 simulation (sim/experiment.py). All numbers are simulated."""
+"""Tests of the earlier temperature simulation (sim/experiment_temperature.py). All numbers are simulated.
+The rain-count experiment is tested in tests/test_lmsr_rain_experiment.py."""
 import csv
 import math
 import os
 
 import pytest
 
-from sim import experiment, lmsr
+from sim import experiment_temperature as experiment, lmsr
 
 STATION = experiment.DEFAULT_STATION
 needs_data = pytest.mark.skipif(not os.path.exists(STATION), reason="station file missing")

@@ -48,3 +48,5 @@ Phase 0 evidence: docs/status/phase0_verdict.md and the three phase0_*.md files.
 
 ## Changes
 - 2026-11-12: created from Phase 0 results.
+- 2026-11-12: Trenton has 28 usable seasons (1999-2026); 1998 falls just under the 90% rule. Train = 1999-2014.
+- 2026-11-12: The Kalshi-pay flag uses the official daily total (GHCN daily, which matches the NWS climate report Kalshi settles on), not the sum of hourly readings. The hourly sum overcounts at Trenton in 2002-2013 (0.01 inch dew readings). Both versions stay in the tables.
