@@ -68,3 +68,35 @@ Where the pre-registration leaves a rule open, the literal reading is used.
   Both figures opened and checked. Fixed: legend sat on the band (moved below the axes); footnote ran off the
   right edge (wrapped). Listing map: 45 of 84 gauges above 0; MD 0 of 8, CT 1 of 8; blue in upstate NY is
   mostly stations with one or two hot days a season.
+- 2026-11-12 22:50 scripts/reach_combined.py written. It reads both pair and curve files, maps the rain
+  workstream's column names (bin_lo_km, he_lo_pair, ...) onto this workstream's, recomputes reach from each curve
+  with the registered rule, tests whether the pair bands separate bin by bin, marks the hypothesis supported /
+  not supported / unresolved, and plots the Trenton-PNE pair if the rain pair file has it. Checked end to end on
+  a synthetic rain curve in the scratchpad (not in the repo). At this time data/processed/reach/rain_pairs.csv and
+  results/phase3/rain_reach_curve.csv do not exist, so combined_reach.png and combined_summary.md hold the
+  temperature curve only and say the hypothesis is UNRESOLVED pending rain. Rerun the script when rain lands.
+- 2026-11-12 22:52 Status: COMPLETE for the temperature side; combined outputs await the rain files.
+
+## Results in brief (REPORT 2021-2025; observed weather, modelled premiums; details in results/phase3/temp_reach_summary.md)
+- 992 pairs, 951 with HE, 41 undefined, 0 fail the usable rule.
+- Registered reach: NONE under both bootstraps. Same-station bin mean HE -0.92, pair band [-2.62, 0.34], gauge
+  band [-2.44, 0.31]; median 0.74, 27 of 40 same-station pairs above 0. Every other bin's mean is below -0.7
+  and every lower band edge is below 0.
+- Regression (951 pairs, 80 gauges, R2 0.04): distance -1.12 per 100 km [-4.22, 2.81]; |elev diff| -2.32 per
+  100 m [-6.73, 1.09]; coast -5.35 [-10.16, -1.60] (gauge-bootstrap intervals).
+- Labelled sensitivity (d grid 0..40): same-station mean 0.31 [-0.24, 0.76]; reach still none.
+- Listing map: 45 of 84 gauges above 0; MD 0 of 8, CT 1 of 8, NJ 7 of 11, PA 12 of 24, NY 23 of 31.
+
+## Deviations
+None forced. Added after seeing the registered result, labelled wherever shown: the d-grid {0..40} sensitivity
+and the bin median. docs/PHASE3_PREREG.md was not edited (outside this workstream's files).
+
+## Doubtful points for the lead
+1. The registered d grid {0..8} was written for rain counts. At temperature stations with 20-40 hot days a
+   season it forces a near-full-payout contract whose loaded premium alone makes net cost exceed the reference.
+   The "reach = none" result is largely this rule, not location basis: the same-station median is 0.74 and the
+   daily trigger agreement is 1.0 by construction.
+2. HE is unbounded below and the bin means are dominated by a handful of pairs (minimum -244). The registered
+   statistic is the mean; the medians look different (near 0 to -1.9) but still never positive beyond 30 km.
+3. Only 5 REPORT seasons per pair, shared by all pairs. The pair and gauge bands do not capture season sampling.
+4. The combined figure and summary are provisional until the rain files exist.

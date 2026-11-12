@@ -58,3 +58,10 @@ Where the pre-registration leaves a rule open, the literal reading is used. Code
   workstream, for matching column names), src/rain, src/hedge_eval, scripts/p0_rain_*.py. The earlier attempt
   left scripts/reach_rain_stations.py (run once: 121 candidate stations, 40 with a climate report) and
   scripts/reach_rain_fetch.py (never run). Both reused after reading. IEM and NCEI reachable (HTTP 200).
+- 2026-11-12 22:57 Pull started in the background: `scripts/reach_rain_fetch.py iem` then `ncei`, one request at
+  a time, cached under data/raw/rain/reach/ (requests.log per source). IEM answers 429 now and then; the script
+  waits 20 s and retries (all retries so far succeeded). About 25 s per station.
+- 2026-11-12 23:00 src/reach/rain_hourly.py (Phase 0 reduction rules): reproduces the Phase 0 TTN (IEM) and PHL
+  (NCEI) hourly files row for row (0 mismatches in present or precip_in).
+- 2026-11-12 23:03 src/reach/{rain_geo,rain_pairs,rain_curve}.py, scripts/reach_rain_{build,pairs,report}.py,
+  tests/test_reach_rain_{pairs,curve}.py (13 pass). Reading choices above written down before any pair was scored.
