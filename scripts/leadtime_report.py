@@ -189,7 +189,9 @@ def summary(he: pd.DataFrame, obs: pd.DataFrame, skill: pd.DataFrame, chk: pd.Da
                  f"{r['brier_observed_ask']:.3f} | {r['brier_pop']:.3f} |")
     L.append("")
     L.append("## Caveats\n")
-    L.append("1. Modelled prices are a deterministic markup over a MOS probability; real asks scatter, thin out and go to 1.00 on some rain days. The model is checked only at 1.5 days.")
+    g = chk[(chk["line"] == "GFS") & (chk["markup"] == "main")]
+    diffs = ", ".join(f"{r['city']} {r['mean_difference_modelled_minus_observed']:+.2f} (n = {int(r['n_days'])})" for _, r in g.iterrows())
+    L.append(f"1. Modelled prices are a deterministic markup over a MOS probability; real asks scatter, thin out and go to 1.00 on some rain days. The model is checked only at 1.5 days: the mean modelled ask minus the observed 36-h ask is {diffs}. At Trenton, Philadelphia and Newark (2026 KXRAIN) the model is too dear by 8-13 cents, so the modelled premium curve sits above what the observed end shows (1.50 vs 1.21 per $1 of payout); NYC (2025-2026, thin 2025 book and the old trace rule) goes the other way. A dearer model lowers HE, but HE is also below zero at lead = infinity, where no forecast enters the price.")
     L.append("2. The MOS 24-h window is 00Z-00Z (20:00-20:00 local), four hours before the climate day. The p12x2 and p06x4 fields assume independent periods and overstate the probability on persistent-rain days (see calibration).")
     L.append("3. MEX leads 4-7 exist only from 2021 (6 seasons); their n and reference level come from the station's GFS lead-3 TRAIN choice, and their REPORT bands are wide.")
     L.append("4. Philadelphia GFS leads use a 60/40 split of 2004-2026 because the Phase 2 TRAIN window (1941-1990) predates the archive.")

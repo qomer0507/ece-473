@@ -81,3 +81,34 @@ climatology plus the Phase 1 markup and fee.
 - 2026-11-12 23:06: Wrote src/leadtime/mos_pop.py (PoP by run and lead, Brier, calibration), src/leadtime/hedge_by_lead.py (modelled price by lead, strategy-2 sizing, bootstrap via src/hedge_eval), scripts/leadtime_mos_skill.py, scripts/leadtime_he.py, tests/test_leadtime_pop.py and tests/test_leadtime_hedge.py (16 pass: PoP combination, lead matching, carry-forward, clamp, fee, hand-checked HE). Pull still running (GFS done for both stations, MEX in progress).
 - 2026-11-12 23:11: Debug runs of the skill and HE scripts on the GFS/MEX cache worked (code checks only; 161 MEX KTTN 2020 p12 rows at the 192-h step hold values above 100 and are treated as missing). Added KEWR and KNYC 2025-2026 (GFS, MEX, NBS) to the pull plan for the observed-end price check; the check now forms PoPs for every quote-table market day, not only park-season days. Wrote scripts/leadtime_report.py. Waiting for the NBS/NBE pull to finish before the final runs.
 - 2026-11-12 23:14: MOS pull complete: 110 of 110 files cached (GFS 2004-2026, AVN 2000-2003, MEX 2020-2026, NBS 2019-2026, NBE 2020-2026 for KTTN and KPHL; GFS/MEX/NBS 2025-2026 for KEWR and KNYC), 0 errors, about 150 MB. Final skill run started.
+- 2026-11-12 23:20: Container restarted during the final skill run; outputs on disk were still from the debug run. Re-running skill, HE and report scripts on the complete cache.
+- 2026-11-12 23:23: Final runs done on the complete cache. Outputs: results/phase3/leadtime_skill_by_lead.csv,
+  leadtime_calibration_by_lead.csv, leadtime_he_by_lead.csv, leadtime_price_check.csv, leadtime.png (opened and
+  checked; legend and tick collisions fixed), leadtime_summary.md; data/processed/leadtime/mos_pop_{TTN,PHL}.parquet,
+  mos_coverage_*.csv, season_cost_by_lead.csv, observed_by_decision_time.csv. 16 tests pass. No rule was changed
+  after a skill or hedge number was seen; the one amendment (PoP field, 23:03) was made from the file layout.
+
+## Results in brief (EXPLORATORY; weather observed; prices modelled beyond 1.5 days)
+- Skill by lead (Brier, Trenton; climatology 0.228): GFS p12x2 0.131 at 1.42 d, 0.139 at 2 d, 0.155 at 3 d;
+  MEX p24 0.172 at 4 d, 0.206 at 7 d (2020-2026). Philadelphia is similar (0.144, 0.166, 0.171, 0.199; clim 0.220).
+  Skill vs climatology falls from about 0.43 at 1.4 d to about 0.10 at 7 d. The p06x4 line is sharper (0.115 at 1.17 d).
+- Observed (four cities, all years, one contract per day): premium + fee per $1 payout 1.20 (36 h), 1.21 (24 h),
+  1.38 (12 h), 2.60 (2 h); share of rain days with no offer 0.35, 0.22, 0.66, 0.92; Brier of the mid 0.126, 0.108, 0.099, 0.071.
+- HE (strategy 2, n = 0.05 at every lead, the grid minimum): Trenton -1.3 [-2.5, -0.9] at 1.5-3 d, -1.4 to -1.7 at
+  4-7 d (6 REPORT seasons), -0.69 [-1.36, -0.47] at infinity; Philadelphia -1.5 [-8.5, -1.2] at 1.5-3 d (10 REPORT
+  seasons), -1.0 to -1.2 at 4-7 d, -0.23 [-0.51, -0.14] at infinity. HE never exceeds zero: per the pre-registration,
+  the daily contract's shape, not its timing, is the binding problem.
+- Modelled premium per $1 payout: 1.50 at 1.5 d, 1.43-1.48 at 7 d, 1.35-1.39 at climatology.
+- Model check at the observed end (modelled ask at the GFS 18Z D-1 run vs the real 36-h ask, 2026 KXRAIN): modelled
+  minus observed +0.13 Trenton (35 days), +0.09 Philadelphia (69), +0.12 Newark (34); NYC 2025-2026 -0.09 (202 days).
+  Daily correlation 0.92, 0.71, 0.91, 0.64. The combined p12 PoP overstates the rain share by about 0.05 (calibration).
+
+## Doubtful points for the lead
+1. The modelled price is 8-13 cents too dear at the observed end for the three current-rule cities; the modelled
+   premium curve (1.50) sits above the observed 1.5-day point (1.21). The HE conclusion does not rest on it: HE is
+   below zero at infinity too, and in Phase 2 strategy 5 (fair price, no fee) as well.
+2. MEX leads 4-7 rest on 6 seasons with n and reference borrowed from the GFS lead-3 TRAIN; bands are very wide.
+3. Philadelphia GFS leads use a 60/40 split of 2004-2026 (13 TRAIN, 10 REPORT), not the Phase 2 windows.
+4. HE is strongly negative mainly because the strategy-2 grid has no n = 0 and the REPORT seasons sit near the
+   TRAIN reference, so even a 0.05-contract premium inflates the semi-variance; this is the Phase 2 pattern.
+5. The MOS 24-h windows (00Z-00Z or 06Z-06Z) do not match the local climate day exactly.

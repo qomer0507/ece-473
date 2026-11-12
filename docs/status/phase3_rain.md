@@ -73,3 +73,6 @@ Where the pre-registration leaves a rule open, the literal reading is used. Code
     (Phase 0: a failure without PNO cannot be caught). The SPEC rule is kept as the main rule; the station table
     gets n_usable_zero_rain (usable seasons whose opening-hours rain total is 0.00 in) and such stations are
     listed in the summary. Seen in the smoke test: SWF, 12 usable seasons, 0 loss days (not kept anyway).
+- 2026-11-12 23:15 The container restarted; the background pull died after 46 IEM stations (the last request, ART,
+  got an empty reply). Pull restarted with the same script (cached files are skipped). Reading choice 14 above
+  belongs to the numbered list; it was written before the full build.
