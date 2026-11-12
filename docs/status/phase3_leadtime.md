@@ -66,3 +66,15 @@ climatology plus the Phase 1 markup and fee.
    quote. Brier of the mid on two-sided days. Mean ask on rain and dry days over buyable days.
 - 2026-11-12 23:00: Task 1 done. src/leadtime/observed.py, scripts/leadtime_observed.py -> data/processed/leadtime/observed_by_decision_time.csv (aggregates only; four groups x four decision times). Check: the 24-h four-city KXRAIN 2026 premium per $1 payout (1.148) equals the Phase 1 set-C figure.
 - 2026-11-12 23:00: Note: daily_<station>.parquet holds season days only (Friday before Memorial Day to Labor Day), so the skill tables are over those days, not all of May-Sep. Skill tables use days with a non-missing official total; the hedge keeps the Phase 2 rule (missing = No).
+- 2026-11-12 23:01: Amendment to reading choice 2, made from the file layout before any skill or price
+  number was computed. In the GFS MAV files the first p12 of a run is the period ending 18-24 h after the run
+  (00Z and 06Z runs: first p12 at 00Z next day; 12Z and 18Z runs: at 12Z next day), and the first p06 is 12 h
+  after the run. So no run with a lead under 1.42 days (the 18Z run of D-1) has both p12 values for the window
+  00Z D - 00Z D+1. Consequences: (a) the main line's shortest lead is 1.42 days (target 1.5; this is also the
+  observed-end check against Kalshi's 36-hour asks); the target "1 day" on the main line has no value and is
+  reported as not available; (b) an extra, labelled line "p06x4" combines the four p06 values ending 12Z D,
+  18Z D, 00Z D+1, 06Z D+1 (window 06Z-06Z = 02:00-02:00 local, closer to the climate day) as 1 - prod(1 - p);
+  it exists from the 00Z run of D (lead 1.17 days, the "1 day" point) and at leads 1.42, 2, 3. Four combined
+  periods assume more independence than two, so this line is expected to overstate the probability more; the
+  calibration tables show it. MEX leads 4-7 use p24 (00Z runs; MEX has no p06). The p12x2 value is kept for
+  every line as the one field formed the same way at every lead.

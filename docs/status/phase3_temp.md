@@ -64,3 +64,7 @@ Where the pre-registration leaves a rule open, the literal reading is used.
   Registered regression (951 pairs, 80 gauges, R2 0.04): distance -1.12 per 100 km, gauge band [-4.22, 2.81];
   |elev diff| -2.32 per 100 m [-6.73, 1.09]; coast -5.35 [-10.16, -1.60]. HE is unbounded below (minimum -244),
   so the means are dragged by pairs whose REPORT seasons barely exceed the reference. Next: figures and summary.
+- 2026-11-12 22:35 scripts/reach_temp_report.py: temp_reach.png, temp_listing_map.png, temp_reach_summary.md.
+  Both figures opened and checked. Fixed: legend sat on the band (moved below the axes); footnote ran off the
+  right edge (wrapped). Listing map: 45 of 84 gauges above 0; MD 0 of 8, CT 1 of 8; blue in upstate NY is
+  mostly stations with one or two hot days a season.
