@@ -289,6 +289,7 @@ From results/market/gas_report.json, written by `npm test` in contracts/ (test/1
 | oracle.setReporter | 1 | 45,727 | 45,727 | 45,727 |
 | oracle.voidReport | 1 | 31,012 | 31,012 | 31,012 |
 | redeem | 2 | 44,585 | 44,585 | 44,585 |
+| registered stepped basket [0,2,6,9,15,27] (first trade, fresh market) | 1 | 354,120 | 354,120 | 354,120 |
 | settle | 1 | 159,975 | 159,975 | 159,975 |
 | sponsorWithdraw | 2 | 36,444 | 36,444 | 36,444 |
 | stepped x100 as ONE basket (fresh market) | 1 | 268,264 | 268,264 | 268,264 |

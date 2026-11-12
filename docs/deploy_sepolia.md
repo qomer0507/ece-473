@@ -53,7 +53,8 @@ Write the three public addresses in the table of section 4 now. You need the Buy
 - Text arguments (the station) are typed without quotes in that form: `TTN`.
 - Lists are typed with square brackets, commas, no spaces: `[2,4,5,6,8]`.
 - **VALUE** is at the top of the "Deploy & run" tab. Set the unit next to it to **Wei**. Remix normally sets VALUE back
-  to 0 after a transaction. Check it before every call: it must be 0 except in steps 7 and 13.
+  to 0 after a transaction. Check it before every call: it must be 0 except for the deployment of the market (steps 6 to 8) and the buy
+  (steps 12 and 13).
 
 ## 1. Remix set-up
 
@@ -231,6 +232,8 @@ Each step says which account, what to type, and what you should see.
     oracle with `TTN`, `2025`, `5` and click transact. MetaMask warns that the transaction is likely to fail;
     reject it. In the Remix VM there is no warning: the transaction fails and the Remix terminal shows
     "Season not over". Nothing is stored either way.
+    After seasonEnd you have 30 minutes (until T + 3300, the reportDeadline) for step 18. A report after the
+    deadline does not count: the market can then only be cancelled and refunded (steps 27 and 28).
 
 ### Reporter account: report the 2025 count
 

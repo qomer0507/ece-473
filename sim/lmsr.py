@@ -267,7 +267,8 @@ def climatology_prior(path: str, bounds: Sequence[int] = DEFAULT_BOUNDS,
 # worst-case loss is b ln 6.
 
 N_COUNT_BUCKETS = 6
-# Example only. The real edges are chosen on the training seasons by the rain workstream.
+# Example only (used by the reference vectors and the older tests). The registered edges are
+# REGISTERED_EDGES_TTN below, computed from the training seasons by registered_edges().
 EXAMPLE_EDGES: List[int] = [2, 4, 6, 8, 10]
 MIN_UNIT_WEI = 10 ** 9
 MAX_Q = 10 ** 15
