@@ -870,6 +870,9 @@ interface ISeasonCountOracle {
         bucket 0: 0-2   bucket 1: 3-4   bucket 2: 5-6
         bucket 3: 7-8   bucket 4: 9-10  bucket 5: 11 or more
       Every count from 0 to seasonDays is in exactly one bucket.
+      Edges used in the project for Trenton (docs/PHASE2_PREREG.md) [2, 4, 5, 6, 8]:
+        bucket 0: 0-2   bucket 1: 3-4   bucket 2: 5
+        bucket 3: 6     bucket 4: 7-8   bucket 5: 9 or more
 
     Units
       Shares are whole numbers. One share of the winning bucket pays `unit` wei.

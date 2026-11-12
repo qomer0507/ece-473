@@ -32,9 +32,9 @@
   },
   "deploy RainCountLMSR": {
    "calls": 1,
-   "min": 3776889,
-   "median": 3776889,
-   "max": 3776889
+   "min": 3776901,
+   "median": 3776901,
+   "max": 3776901
   },
   "buy (one bucket, first buy of this buyer)": {
    "calls": 1,
@@ -77,6 +77,12 @@
    "min": 268264,
    "median": 268264,
    "max": 268264
+  },
+  "registered stepped basket [0,2,6,9,15,27] (first trade, fresh market)": {
+   "calls": 1,
+   "min": 354120,
+   "median": 354120,
+   "max": 354120
   },
   "stepped x100 by THREE single buys (fresh market, sum)": {
    "calls": 1,

@@ -281,7 +281,7 @@ From results/market/gas_report.json, written by `npm test` in contracts/ (test/1
 | buyBasket stepped [0,0,0,1,2,3] x size (repeat) | 3 | 117,196 | 131,214 | 131,436 |
 | cancelAfterDeadline | 1 | 106,570 | 106,570 | 106,570 |
 | claimRefund | 2 | 39,539 | 39,539 | 39,539 |
-| deploy RainCountLMSR | 1 | 3,776,889 | 3,776,889 | 3,776,889 |
+| deploy RainCountLMSR | 1 | 3,776,901 | 3,776,901 | 3,776,901 |
 | deploy SeasonCountOracle | 1 | 840,559 | 840,559 | 840,559 |
 | emergencyCancel | 1 | 95,391 | 95,391 | 95,391 |
 | oracle.openSeason | 1 | 49,167 | 49,167 | 49,167 |

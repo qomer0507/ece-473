@@ -53,6 +53,10 @@ describe("15 rain gas report (self-contained)", function () {
     // One basket against the same position by three single buys, each in a fresh market.
     const one = await deployRain({ b: 100, unit: 10n ** 14n });
     await gas("stepped x100 as ONE basket (fresh market)", one.market.connect(one.alice).buyBasket(STEPPED.map((x) => x * 100n), MAX, { value: E18 }));
+    // The registered product: edges [2,4,5,6,8], hedge 3 x max(m_j - 3, 0), as in docs/deploy_sepolia.md.
+    const regd = await deployRain({ b: 100, unit: 10n ** 14n, edges: [2, 4, 5, 6, 8] });
+    await gas("registered stepped basket [0,2,6,9,15,27] (first trade, fresh market)",
+      regd.market.connect(regd.alice).buyBasket([0, 2, 6, 9, 15, 27], MAX, { value: E18 }));
     const legs = await deployRain({ b: 100, unit: 10n ** 14n });
     let three = 0;
     for (const [j, s] of [[3, 100], [4, 200], [5, 300]]) {
@@ -95,7 +99,7 @@ describe("15 rain gas report (self-contained)", function () {
       const sorted = xs.slice().sort((a, c) => a - c);
       rows[label] = { calls: xs.length, min: sorted[0], median: sorted[Math.floor(sorted.length / 2)], max: sorted[sorted.length - 1] };
     }
-    expect(Object.keys(rows).length).to.equal(21);
+    expect(Object.keys(rows).length).to.equal(22);
     for (const [label, r] of Object.entries(rows)) {
       // every transaction costs at least the 21,000 base; none may come near a block
       expect(r.min, label).to.be.gt(21000);

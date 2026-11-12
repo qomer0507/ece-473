@@ -1,0 +1,4 @@
+gauge,name,lat,lon,km_to_sesame_place,km_to_TTN,km_to_PHL,note
+PNE,PHILADELPHIA NE,40.0789,-75.0134,16.8,27.7,29.2,coordinates observed (station metadata); the stand-in gauge is not the park
+DYL,DOYLESTOWN AIRPORT,40.333,-75.1223,26.9,26.7,51.9,coordinates observed (station metadata); the stand-in gauge is not the park
+TTN,TRENTON/MERCER CO.,40.2768,-74.8159,11.3,0.0,56.9,coordinates observed (station metadata); the stand-in gauge is not the park
