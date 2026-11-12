@@ -58,3 +58,9 @@ Where the pre-registration leaves a rule open, the literal reading is used.
   20-40 loss-days alone drives net cost above the reference. Decided at this point (not registered, labelled):
   one sensitivity with the d grid widened to {0..40}, and a median curve beside the registered mean curve.
   The registered mean curve and reach stay the headline. No other rule changed.
+- 2026-11-12 22:20 Rerun with the labelled sensitivity (d grid {0..40}; files *_sens_dgrid40.csv). Registered run
+  unchanged. Sensitivity: same-station bin mean HE 0.31, median 0.90, bands [-0.24, 0.76] (pair) and
+  [-0.22, 0.74] (gauge); still no bin with a lower band edge above 0, so reach is unresolved under both rules.
+  Registered regression (951 pairs, 80 gauges, R2 0.04): distance -1.12 per 100 km, gauge band [-4.22, 2.81];
+  |elev diff| -2.32 per 100 m [-6.73, 1.09]; coast -5.35 [-10.16, -1.60]. HE is unbounded below (minimum -244),
+  so the means are dragged by pairs whose REPORT seasons barely exceed the reference. Next: figures and summary.
