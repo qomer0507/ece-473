@@ -3,9 +3,10 @@
 Testnet only. No real money. Never paste a private key or a seed phrase anywhere: MetaMask signs for you.
 
 Status of this guide: every contract call and every number below was run in the local Hardhat EVM by `npm test`
-(contracts/test/16_rain_guide.test.js and 17_rain_registered.test.js).
-**Nothing here was tried in Remix, in MetaMask or on Sepolia** (the build machine has no access to them).
-Treat the first run as a rehearsal and write down anything that differs.
+(contracts/test/16_rain_guide.test.js and 17_rain_registered.test.js), and the whole guide (steps 1-28) was
+rehearsed in the Remix VM on 2026-11-12 (Remix 2.6.14, compiler 0.8.26, optimizer 200 runs). Every predicted
+number matched to the wei and every safety check fired. Three Remix interface quirks were found; they are built
+into the steps below and listed under "Remix quirks". **MetaMask and Sepolia themselves are still untried.**
 
 Contracts (flattened, no imports, ready to paste):
 
@@ -52,9 +53,13 @@ Write the three public addresses in the table of section 4 now. You need the Buy
 - Click the small arrow next to a function to open the form with one field per argument.
 - Text arguments (the station) are typed without quotes in that form: `TTN`.
 - Lists are typed with square brackets, commas, no spaces: `[2,4,5,6,8]`.
-- **VALUE** is at the top of the "Deploy & run" tab. Set the unit next to it to **Wei**. Remix normally sets VALUE back
-  to 0 after a transaction. Check it before every call: it must be 0 except for the deployment of the market (steps 6 to 8) and the buy
-  (steps 12 and 13).
+- **Two VALUE fields.** The VALUE box at the top of the "Deploy & run" tab is used only for DEPLOYMENTS
+  (steps 6 to 8 and 25). For a call on a deployed contract, such as the buy in steps 12 and 13 and 26, use the
+  contract's OWN **Value** and **Gas limit** fields at the bottom of its box under "Deployed Contracts" (below
+  "Low level interaction"). A buy with the money in the top box reverts with "Insufficient payment".
+- **Set VALUE back to 0 yourself** after every payable call, in whichever field you used. Remix does not reliably
+  reset it, and a stale value is sent with the next call.
+- Units: set the unit next to each Value field to **Wei**.
 
 ## 1. Remix set-up
 
@@ -67,6 +72,9 @@ Write the three public addresses in the table of section 4 now. You need the Buy
 5. Deploy & run tab: Environment = **Injected Provider - MetaMask**. Check that Remix shows "Sepolia (11155111)".
 6. Gas limit: choose **Estimated Gas**. If your Remix only has a number field, type `5000000`
    (deploying the market needs about 3.8 million gas; the old default of 3,000,000 is too small).
+7. For `cancelAfterDeadline` (step 27), and for `settle` if it ever says "Send more gas", set that contract's own
+   **Gas limit** field to `300000` first. The contract keeps a gas reserve for its oracle call, and Remix's
+   automatic estimate falls just short.
 
 Rehearse once with Environment = **Remix VM** first. It is free and instant. The waiting times are the same,
 because the Remix VM is expected to use the real clock for new blocks (not tried from here: check with
@@ -389,3 +397,15 @@ open. For the live part deploy a fresh oracle and market shortly before the talk
    State what a wet season would have done: 12 loss days pay 27 shares; the sponsor's loss is capped at 0.017918 ETH.
 8. (30 s) What can go wrong: no report, then `cancelAfterDeadline` and full refunds (show the rehearsal market).
 9. (30 s) Limits: one reporter, sponsor and oracle must be separate, no selling, testnet only, d not final.
+
+## Remix quirks found in the 2026-11-12 rehearsal
+
+| # | What happens | What to do |
+|---|---|---|
+| 1 | The top VALUE box is only used for deployments. A `buyBasket` with the money there reverts with "Insufficient payment". | Put the buy's Value in the deployed contract's own Value field. |
+| 2 | VALUE does not reliably reset to 0 after a transaction. | Set it back to 0 yourself after every payable call. |
+| 3 | `cancelAfterDeadline` with automatic gas reverts with "Send more gas". | Set that contract's Gas limit to 300000 before the call. |
+
+Rehearsal gas: `buyBasket` 353,808; `cancelAfterDeadline` 106,570. The Remix VM uses the real clock, so the
+guide's waiting times apply unchanged. The VM's state is lost on page reload, so a VM backup demo must be set up
+fresh on the day, ideally with shorter season times.
