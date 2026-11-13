@@ -19,7 +19,7 @@ Actual:
 - Built a daily maximum-temperature dataset from NOAA GHCN-Daily, May–Sep 2015–2025. It covers two reference stations (Central Park and Trenton-Mercer) and seven nearby "local" stations 7–41 km away.
 - Spot-checked 44 station-days against NOAA's own service. All 44 matched.
 - Preliminary result at a 90°F heat-day trigger: daily correlations are 0.93–0.99, yet the triggers disagree on 6–11% of season days.
-- Inland stations run hotter: a Central Park contract misses 34–49% of heat days at LaGuardia, Teterboro, Newark and Philadelphia NE.
+- Inland stations run hotter: a Central Park contract misses 35–49% of heat days at LaGuardia, Teterboro and Newark, and a Trenton contract misses 36% at Philadelphia Northeast.
 - JFK runs cooler: on 57% of Central Park heat days, JFK is not hot. That is an overhedge.
 - Distance does not predict mismatch. Siting matters more: coast versus urban heat.
 - Wrote the loader and basis-risk module, with 11 tests.
