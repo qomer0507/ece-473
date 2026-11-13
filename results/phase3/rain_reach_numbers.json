@@ -1,33 +1,51 @@
 {
   "n_candidates": 121,
-  "n_kept": 30,
-  "n_kept_cli": 19,
-  "n_pairs_built": 222,
-  "n_pairs_scored": 222,
-  "n_pairs_he_defined": 221,
-  "n_pairs_excluded": {},
-  "n_gauges_scored": 30,
-  "n_settlement_scored": 19,
+  "n_kept": 82,
+  "n_kept_cli": 39,
+  "n_pairs_built": 956,
+  "n_pairs_scored": 926,
+  "n_pairs_he_defined": 916,
+  "n_pairs_excluded": {
+    "few_joint_seasons": 30
+  },
+  "n_gauges_scored": 81,
+  "n_settlement_scored": 39,
   "reach_pair_boot": {
-    "reach_km": 80.0,
+    "reach_km": 0.0,
     "contiguous_reach_km": 0.0,
     "same_station_lo_above_0": true
   },
   "reach_gauge_boot": {
-    "reach_km": 80.0,
+    "reach_km": 0.0,
     "contiguous_reach_km": 0.0,
     "same_station_lo_above_0": true
   },
   "reach_sensitivity_pair_boot": {
-    "reach_km": 80.0,
+    "reach_km": 0.0,
     "contiguous_reach_km": 0.0,
     "same_station_lo_above_0": true
   },
   "reach_sensitivity_gauge_boot": {
-    "reach_km": 80.0,
+    "reach_km": 0.0,
     "contiguous_reach_km": 0.0,
     "same_station_lo_above_0": true
   },
+  "reach_nozero_pair_boot": {
+    "reach_km": 0.0,
+    "contiguous_reach_km": 0.0,
+    "same_station_lo_above_0": true
+  },
+  "reach_nozero_gauge_boot": {
+    "reach_km": 0.0,
+    "contiguous_reach_km": 0.0,
+    "same_station_lo_above_0": true
+  },
+  "nozero_n_stations": 80,
+  "nozero_n_pairs_scored": 911,
+  "nozero_stations_dropped": [
+    "ITH",
+    "UNV"
+  ],
   "trenton_pne": {
     "s_id": "TTN",
     "g_id": "PNE",
@@ -60,7 +78,7 @@
   },
   "trenton_pne_scored": true,
   "same_station": {
-    "n": 19,
-    "mean_he": 0.834897521132989
+    "n": 39,
+    "mean_he": 0.8168517073997299
   }
 }

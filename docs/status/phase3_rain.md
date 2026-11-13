@@ -87,3 +87,60 @@ Where the pre-registration leaves a rule open, the literal reading is used. Code
 - 2026-11-13 00:35 Full build stopped on SWF_1991_2000.csv.gz: the NCEI reply was truncated (3.8 MB, HTTP 200,
   EOF inside a quoted field). File moved aside and re-fetched (7.3 MB, parses). Every other NCEI file checked to
   parse. reduce_isd now raises on a malformed file instead of reading part of it. Build restarted.
+- 2026-11-13 00:41 Build complete: 121 candidates, 82 kept (>= 20 usable seasons), 39 of them with a climate
+  report; 43 kept stations have seasons from the NCEI archive. Not kept: 39 stations with fewer than 20 usable
+  seasons (listed in rain_stations.csv). Pair scoring started.
+- 2026-11-13 00:41 scripts/reach_rain_pairs.py: 956 pairs built (39 same-station), 926 scored under the main
+  rule, 30 listed as few_joint_seasons (rain_pairs_excluded.csv), HE defined for 916. Then reach_rain_report.py.
+- 2026-11-13 00:50 Figure opened and checked twice: title wrapped to two lines, Trenton-PNE label moved below the
+  point, 90-100 km bin mean annotated where it leaves the axis, median line added beside the registered mean,
+  16 pairs below the axis counted in the note. Summary: median HE added beside the registered bin mean; the
+  station-level "best" column is flagged as chosen on REPORT seasons. No scoring rule changed after results.
+- 2026-11-13 00:52 Tests: tests/test_reach_rain_pairs.py, test_reach_rain_curve.py, 13 pass. Status: COMPLETE.
+
+## Results in brief (REPORT seasons; observed weather, modelled premiums; results/phase3/rain_reach_summary.md)
+- Stations: 121 candidates, 82 kept, 39 with a climate report. Pairs scored: 926 (HE defined 916).
+- Same-station ceiling: 39 pairs, mean HE 0.82 (band 0.65 to 0.92).
+- Reach = 0 km under the pair bootstrap and under the gauge bootstrap (registered and contiguous definitions,
+  main rule and both sensitivities). The 0-10 km bin (3 pairs) has mean HE -0.60; from 10 km on every bin mean
+  sits between -0.21 and +0.06 (90-100 km: -2.17, pulled by one pair at -125) with bands that straddle 0.
+  Median HE over pairs with S != G is 0.02; 51% are above 0. Count correlation falls from 0.68 (0-10 km) to
+  0.30 (190-200 km) and daily agreement from 0.973 to 0.916, yet HE is flat at zero: the correlation that is
+  left is not enough for the exact count contract to cover the gauge's bad seasons after the premium.
+- Regression (all pairs, n = 916, R2 0.01): distance -0.001 per 100 km (gauge-boot -0.18 to 0.21), elevation
+  -0.045 per 100 m (-0.09 to 0.01), coast -0.79 (-2.31 to -0.05). Without same-station pairs: distance +0.22
+  (-0.03 to 0.54). The coast coefficient rests on outliers: dropping pairs with HE < -1 gives coast -0.15.
+- Trenton-PNE (27.7 km): HE -0.35, inside its bin's band (-0.30 to 0.29); same number as Phase 2 B1 HE(4).
+- Station level: 42 gauges without a climate report; nearest climate-report station (median 40 km) gives median
+  HE 0.11, above 0 for 25 of 41. The REPORT-chosen "best" station gives median 0.71 but is selected in-sample.
+
+## Doubtful points for the lead
+1. HE is unbounded below, so the registered bin MEAN is fragile (POU-LGA: -125). The median is beside it.
+2. The pre-registration's reach definition (largest bin with lower edge above 0) and the contiguous version
+   agree here (0 km), so the choice does not matter for rain.
+3. The 0-10 km bin holds 3 pairs only (station pairs this close are rare: NYC-LGA, PHL-PNE, BDR-HVN type).
+4. UNV has 15 silent-gauge seasons and stays in the main run by the literal SPEC rule; the labelled no-zero-rain
+   sensitivity drops UNV and ITH and gives the same reach.
+5. The coast indicator uses a hand-written mask of the GSHHS ocean shoreline (bays removed); 16 kept gauges are
+   coastal. The coast coefficient is driven by a few extreme pairs with coastal New York gauges.
+6. Pairs are not independent: both bootstraps are reported, neither handles the sharing of settlement stations.
+7. Seasons before 1997 come from the NCEI archive; a pair's TRAIN can be all-NCEI and its REPORT all-IEM.
+8. 30 pairs with fewer than 20 joint seasons are excluded by rule 8 (fixed before results); the sensitivity curve
+   with them included gives the same reach.
+
+## Files
+- Library: src/reach/__init__.py, rain_hourly.py, rain_geo.py, rain_pairs.py, rain_curve.py
+- Scripts: scripts/reach_rain_stations.py, reach_rain_fetch.py, reach_rain_build.py, reach_rain_pairs.py,
+  reach_rain_report.py (run in that order)
+- Tests: tests/test_reach_rain_pairs.py, test_reach_rain_curve.py
+- Raw cache (git-ignored): data/raw/rain/reach/meta/*.geojson, iem_asos/<SID>_B.csv.gz (109),
+  ncei_global_hourly/<SID>_<y0>_<y1>.csv.gz (357), requests.log in each, fetch_run.log
+- Data: data/processed/reach/rain_stations_candidates.csv, rain_stations.csv, rain_season_counts.csv,
+  rain_hourly/ (109 stations), rain_daily/daily_<SID>.parquet (121; 4 stations have no usable season),
+  rain_pairs.csv, rain_pairs_all.csv, rain_pairs_excluded.csv, rain_pairs_sens_nozero.csv
+- Results: results/phase3/rain_reach_curve.csv, rain_reach_curve_sensitivity.csv, rain_reach_curve_sens_nozero.csv,
+  rain_reach_regression.csv, rain_reach_numbers.json, rain_station_table.csv, rain_reach_summary.md, rain_reach.png
+
+## Deviations from the pre-registration
+None. Not registered, labelled wherever shown: the median HE per bin, the contiguous reach, the two sensitivity
+curves, the station-level table, the regression variant without same-station pairs.

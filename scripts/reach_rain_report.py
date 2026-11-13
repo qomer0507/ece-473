@@ -43,7 +43,15 @@ def figure(curve, pairs, numbers, path):
                     label="95% band, pairs resampled")
     ax.plot(mid, c["he_lo_gauge"], color=BLUE, lw=1, ls=":", label="95% band edges, gauges resampled")
     ax.plot(mid, c["he_hi_gauge"], color=BLUE, lw=1, ls=":")
-    ax.plot(mid, c["mean_he"], color=BLUE, lw=2, marker="o", ms=4, label="mean HE per 10-km bin")
+    ax.plot(mid, c["mean_he"], color=BLUE, lw=2, marker="o", ms=4, label="mean HE per 10-km bin (registered)")
+    ax.plot(mid, c["median_he"], color=INK, lw=1.2, ls="--", label="median HE per bin")
+    lo_axis = max(-2.0, float(np.nanpercentile(p["he"], 1)) - 0.1)
+    off = c[c["mean_he"] < lo_axis]
+    for r in off.itertuples():
+        x = (r.bin_lo_km + r.bin_hi_km) / 2
+        ax.annotate(f"{r.bin_lo_km:.0f}-{r.bin_hi_km:.0f} km bin mean {r.mean_he:.1f}\n(off axis; median {r.median_he:.2f})",
+                    (x, lo_axis + 0.02), xytext=(x + 8, lo_axis + 0.45), fontsize=8, color=BLUE,
+                    arrowprops=dict(arrowstyle="-", color=BLUE, lw=0.8))
     ax.axhline(0, color=INK, lw=1)
     tp = numbers.get("trenton_pne")
     if tp and tp.get("he") == tp.get("he"):
@@ -59,8 +67,13 @@ def figure(curve, pairs, numbers, path):
     rk = numbers["reach_pair_boot"]["reach_km"]
     rg = numbers["reach_gauge_boot"]["reach_km"]
     n_below = int((p["he"] < lo).sum())
-    ax.set_title(f"Rain: the seasonal count contract hedges to about {rk:.0f} km "
-                 f"(pair bootstrap; {rg:.0f} km resampling gauges)", fontsize=11, loc="left")
+    if rk == 0 and rg == 0:
+        title = ("Rain: the seasonal count contract hedges only at its own station;\n"
+                 "no 10-km distance bin is reliably above zero (reach 0 km under both bootstraps)")
+    else:
+        title = (f"Rain: the seasonal count contract reaches about {rk:.0f} km "
+                 f"(pairs resampled; {rg:.0f} km with gauges resampled)")
+    ax.set_title(title, fontsize=10, loc="left")
     note = "exploratory; observed weather, modelled prices"
     if n_below:
         note += f"; {n_below} pairs below the axis"
@@ -118,15 +131,24 @@ def summary(curve, curve_s, reg, numbers, pairs, excluded, stations, table):
                  f"{numbers['nozero_n_pairs_scored']} pairs; dropped {numbers['nozero_stations_dropped']}; "
                  f"{name} resampled): reach {r['reach_km']:.0f} km, contiguous {r['contiguous_reach_km']:.0f} km.")
     L.append("")
-    L.append("| bin km | pairs | gauges | mean HE | 95% band (pairs) | 95% band (gauges) | mean r | mean daily agreement |")
-    L.append("|---|---|---|---|---|---|---|---|")
+    L.append("| bin km | pairs | gauges | mean HE | median HE | 95% band (pairs) | 95% band (gauges) | mean r | mean daily agreement |")
+    L.append("|---|---|---|---|---|---|---|---|---|")
     for r in curve.itertuples():
         lab = "0 (S = G)" if r.bin == 0 else f"{r.bin_lo_km:.0f}-{r.bin_hi_km:.0f}"
-        L.append(f"| {lab} | {r.n_he_defined} of {r.n_pairs} | {r.n_gauges} | {fmt(r.mean_he)} | "
+        L.append(f"| {lab} | {r.n_he_defined} of {r.n_pairs} | {r.n_gauges} | {fmt(r.mean_he)} | {fmt(r.median_he)} | "
                  f"{fmt(r.he_lo_pair)} to {fmt(r.he_hi_pair)} | {fmt(r.he_lo_gauge)} to {fmt(r.he_hi_gauge)} | "
                  f"{fmt(r.mean_corr)} | {fmt(r.mean_agreement, 3)} |")
     L.append("")
 
+    nz = pairs[~pairs["he"].isna()]
+    worst = nz.sort_values("he").iloc[0]
+    L.append(f"HE has no lower bound: {int((nz['he'] < -1).sum())} of {len(nz)} pairs are below -1 (worst "
+             f"{worst['s_id']}-{worst['g_id']}, {worst['dist_km']:.0f} km, HE {worst['he']:.0f}: a contract that "
+             f"paid in TRAIN-like seasons and then charged its premium in REPORT seasons where the gauge was dry). "
+             f"The registered bin mean is pulled down by such pairs (the 90-100 km bin most of all); the median "
+             f"beside it is the more stable summary. Over all pairs with S != G the median HE is "
+             f"{nz.loc[~nz['same_station'], 'he'].median():.2f} and {100 * (nz.loc[~nz['same_station'], 'he'] > 0).mean():.0f}% "
+             f"of them are above 0, so the hedge beyond the station is a coin flip around zero, not a slow decay.\n")
     L.append("## Regression of HE on distance, elevation difference and coast\n")
     L.append("| model | term | coefficient | classical SE | 95% gauge-bootstrap interval |")
     L.append("|---|---|---|---|---|")
@@ -150,16 +172,25 @@ def summary(curve, curve_s, reg, numbers, pairs, excluded, stations, table):
         if len(b):
             b = b.iloc[0]
             L.append(f"- Its bin ({b.bin_lo_km:.0f}-{b.bin_hi_km:.0f} km): mean HE {fmt(b.mean_he)}, band "
-                     f"{fmt(b.he_lo_pair)} to {fmt(b.he_hi_pair)} over {b.n_he_defined} pairs.")
+                     f"{fmt(b.he_lo_pair)} to {fmt(b.he_hi_pair)} over {int(b.n_he_defined)} pairs. The point sits "
+                     f"inside the band: Trenton-PNE is a typical pair at that distance, not an unlucky one.")
+        L.append("- Phase 2 (case B1, strategy 4, windows 1999-2014 / 2015-2026) gave HE(4) -0.35 [-0.58, -0.27]; the "
+                 "60/40 split here lands on the same 16 / 12 seasons, so the number is the same.")
     L.append("")
 
     L.append("## Station-level table (results/phase3/rain_station_table.csv)\n")
-    L.append(f"- {len(table)} exposure gauges. Best available settlement station: mean HE "
-             f"{table['best_he'].mean():.2f}; it is the gauge itself for "
-             f"{int((table['best_s_id'] == table['g_id']).sum())} gauges. Nearest climate-report station: mean HE "
-             f"{table['nearest_cli_he'].mean():.2f} (median distance {table['nearest_cli_dist_km'].median():.0f} km); "
-             f"HE above 0 for {int((table['nearest_cli_he'] > 0).sum())} of {int(table['nearest_cli_he'].notna().sum())} "
-             f"gauges with a defined HE.")
+    nn = table[table["nearest_cli_dist_km"] > 0]
+    L.append(f"- {len(table)} exposure gauges, {len(table) - len(nn)} of them climate-report stations (their nearest "
+             f"settlement station is themselves, HE = the same-station ceiling).")
+    L.append(f"- The {len(nn)} gauges without a climate report: nearest climate-report station at a median "
+             f"{nn['nearest_cli_dist_km'].median():.0f} km, HE median {nn['nearest_cli_he'].median():.2f} (mean "
+             f"{nn['nearest_cli_he'].mean():.2f}), above 0 for {int((nn['nearest_cli_he'] > 0).sum())} of "
+             f"{int(nn['nearest_cli_he'].notna().sum())}. 'Best' settlement station (highest REPORT HE among up to "
+             f"{int(nn['n_settlement_candidates'].max())} candidates): median {nn['best_he'].median():.2f}, above 0 "
+             f"for {int((nn['best_he'] > 0).sum())}; median distance {nn['best_dist_km'].median():.0f} km.")
+    L.append("- The 'best' column is a maximum over many noisy REPORT HEs and is chosen on REPORT seasons, so it "
+             "overstates what a buyer could know in advance (several 'best' stations are 100-190 km away). It "
+             "says how good the luckiest pairing looks, not which station to list.")
     L.append("")
 
     L.append("## Caveats, plain language\n")

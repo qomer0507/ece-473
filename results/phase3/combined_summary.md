@@ -5,14 +5,15 @@ Note: exploratory; observed weather, modelled prices. Reach = the largest 10 km 
 ## Reach side by side
 | hazard | pairs | pairs with HE | reach, pairs resampled | reach, gauges resampled | same-station bin mean HE [pair band] |
 |---|---|---|---|---|---|
-| rain | not available yet | | | | |
+| rain | 926 | 916 | 0 km | 0 km | 0.82 [0.65, 0.92] |
 | temperature | 992 | 951 | none | none | -0.92 [-2.62, 0.34] |
 
 ## Do the curves separate?
-- Not testable yet: the rain curve file is missing. Rerun `python scripts/reach_combined.py` once data/processed/reach/rain_pairs.csv and results/phase3/rain_reach_curve.csv exist.
+- Bins where both hazards have a band: 21. Bins where the rain band lies wholly above the temperature band: 19 [0, 10, 20, 40, 50, 60, 70, 80, 90, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200]. Bins where the temperature band lies wholly above the rain band: 0 [].
+- The curves separate in the bins listed; elsewhere the bands overlap.
 
-## Pre-registered hypothesis: rain reach is shorter than temperature reach - **UNRESOLVED**
-- The rain curve is not available yet, so the hypothesis cannot be tested.
+## Pre-registered hypothesis: rain reach is shorter than temperature reach - **NOT SUPPORTED**
+- The two reaches are equal.
 - Temperature: no bin, including the same-station bin, has a lower band edge above 0 under either bootstrap (results/phase3/temp_reach_summary.md explains why: the registered d grid {0..8} is far below the 20-40 hot days a season at the warm stations).
 
 ## Caveats
