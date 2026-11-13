@@ -81,6 +81,8 @@ def reduce_isd(paths: list[str]) -> pd.DataFrame | None:
             frames.append(pd.read_csv(p, dtype=str))
         except (pd.errors.EmptyDataError, gzip.BadGzipFile, OSError):
             continue
+        except pd.errors.ParserError as e:   # a truncated download; the file must be re-fetched, never half-read
+            raise ValueError(f"malformed NCEI file {p}: {e}") from e
     frames = [f for f in frames if not f.empty and "DATE" in f.columns]
     if not frames:
         return None

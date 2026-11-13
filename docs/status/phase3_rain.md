@@ -82,3 +82,8 @@ Where the pre-registration leaves a rule open, the literal reading is used. Code
     ELM 1 of 30, ITH 2 of 20. The main rule is unchanged (literal SPEC). Labelled sensitivity added: zero-rain
     seasons are treated as unusable, stations re-kept at >= 20 seasons, pairs rebuilt and rescored
     (rain_pairs_sens_nozero.csv, rain_reach_curve_sens_nozero.csv).
+- 2026-11-13 00:29 NCEI pull complete: 357 ten-year blocks for the pre-1990 archive stations, 0 failures
+  (data/raw/rain/reach/ncei_global_hourly/requests.log). Full build started.
+- 2026-11-13 00:35 Full build stopped on SWF_1991_2000.csv.gz: the NCEI reply was truncated (3.8 MB, HTTP 200,
+  EOF inside a quoted field). File moved aside and re-fetched (7.3 MB, parses). Every other NCEI file checked to
+  parse. reduce_isd now raises on a malformed file instead of reading part of it. Build restarted.
