@@ -68,4 +68,7 @@ fig5,price_per_1_informed_b_over_size_100,1.015,results/market/hedge_pricing.csv
 fig5,price_per_1_informed_b_over_size_200,1.008,results/market/hedge_pricing.csv
 fig5,price_per_1_informed_b_over_size_500,1.003,results/market/hedge_pricing.csv
 fig5,price_per_1_informed_b_over_size_2000,1.001,results/market/hedge_pricing.csv
+fig6,curve_Rain,see file,results/phase3/rain_reach_curve.csv
+fig6,curve_Temp,see file,results/phase3/temp_reach_curve.csv
+fig7,curve,see file,results/phase3/leadtime_he_by_lead.csv
 fig8,numbers_agree,300 of 300 (120 registered),replication/results.csv vs results/phase2/metrics_tidy.csv
