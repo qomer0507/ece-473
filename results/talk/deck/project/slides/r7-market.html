@@ -1,0 +1,17 @@
+<section id="r7-market" data-transition="fade" style="gap:24px">
+<p class="eyebrow">RESULTS 7 of 7 · THE MARKET WE BUILT</p>
+<h2 style="width:1600px">The seasonal contract runs as an on-chain LMSR market; a sponsor-funded market prices the hedge near fair value once funding is about 10× the hedge</h2>
+<div style="display:flex; gap:40px; align-items:flex-start">
+<img src="/_blob/2d72eadcc57e64d2793fcd9987ea9aef" alt="Simulated LMSR price per $1 of expected payout against sponsor funding, uniform start and after informed trading, with the 1.20 reference" style="width:1040px; height:585px; object-fit:contain; background:#fbfaf7; border:1px solid #d8d4c8; border-radius:12px">
+<div class="card" style="flex:1">
+<p class="label">SEPOLIA DEMO</p>
+<p>Oracle: [address]</p>
+<p>Market: [address]</p>
+<p>Buy, report (2025 count = 5), settle, redeem: [tx hashes]</p>
+<p>Sponsor bound: b × ln 6 · 162 contract tests · 3 accounts: sponsor, reporter, buyer</p>
+<p class="yours" style="font-size:26px">[Your line: what the demo shows]</p>
+</div>
+</div>
+<div class="footer"><p>SIMULATION (left) · live or recorded demo (right) · docs/demo_script.md</p><p class="right pagenum"></p></div>
+<aside>Facts: six count buckets with registered edges [2,4,5,6,8]; one transaction buys any mix of buckets; authorised oracle reports the season's count once after season end; late, missing, stale reports, cancel-and-refund and withdrawal all tested; 162 contract tests, run end to end on the real 2025 Trenton season (5 loss days). Simulation: hedge of 100 units costs 2.10x expected payout at sponsor bound 358, 1.36x at 1,792, 1.21x at 8,959 (uniform start); after informed trading 1.95 / 1.17 / 1.03. LMSR price equals the modelled 1.20 premium at b about 8.5x hedge size. Disclose: one trusted reporter (dispute delay and void added). Fill the addresses and hashes after the Sepolia deploy. Source: results/market/summary.md, docs/deploy_sepolia.md, docs/demo_script.md.</aside>
+</section>

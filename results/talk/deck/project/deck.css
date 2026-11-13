@@ -1,0 +1,35 @@
+:root {
+  --ink: #1b2a41;
+  --paper: #f7f6f2;
+  --paper-2: #ece9e1;
+  --soft: #4a5568;
+  --accent: #b5543a;
+  --accent-2: #2f6db5;
+  --line: #d8d4c8;
+}
+body { font-family: 'IBM Plex Sans', Arial, sans-serif; color: var(--ink); }
+section { background: var(--paper); padding: 128px 128px 160px; display: flex; flex-direction: column; gap: 32px; counter-increment: page; }
+section.dark { background: var(--ink); color: var(--paper); }
+section.figure { padding: 0; gap: 0; }
+h1 { font-family: 'Source Serif 4', Georgia, serif; font-size: 96px; font-weight: 600; line-height: 1.1; }
+h2 { font-family: 'Source Serif 4', Georgia, serif; font-size: 64px; font-weight: 600; line-height: 1.15; }
+h3 { font-family: 'IBM Plex Sans', Arial, sans-serif; font-size: 36px; font-weight: 600; line-height: 1.2; }
+p { font-size: 32px; line-height: 1.4; color: var(--soft); }
+section.dark p { color: #cfd6e2; }
+ul { font-size: 32px; line-height: 1.45; color: var(--soft); padding-left: 40px; }
+.eyebrow { font-size: 24px; font-weight: 600; letter-spacing: 2px; color: var(--accent); }
+.lead { font-size: 40px; line-height: 1.35; color: var(--ink); }
+.yours { font-size: 30px; line-height: 1.4; color: var(--accent-2); border-left: 6px solid var(--accent-2); padding-left: 24px; }
+.cards { display: flex; gap: 32px; }
+.card { flex: 1; background: #fbfaf7; border: 1px solid var(--line); border-radius: 16px; padding: 36px; display: flex; flex-direction: column; gap: 14px; }
+.card p { font-size: 28px; }
+.card .label { font-size: 22px; font-weight: 600; letter-spacing: 2px; color: var(--accent); }
+.big { font-size: 160px; font-weight: 600; line-height: 1; color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; }
+.caption { font-size: 28px; color: var(--soft); }
+.fig { position: absolute; left: 0; top: 0; width: 1920px; height: 980px; object-fit: contain; }
+.footer { position: absolute; left: 128px; bottom: 64px; width: 1664px; display: flex; justify-content: space-between; }
+.footer p { font-size: 24px; color: #6a7179; }
+.footer .right { text-align: right; }
+.pagenum::after { content: counter(page); }
+.note { font-size: 24px; color: #6a7179; }
+table { font-size: 28px; color: var(--ink); width: 100%; }
